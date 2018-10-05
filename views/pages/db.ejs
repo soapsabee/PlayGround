@@ -10,12 +10,25 @@
 
 <div class="container">
 <h2>Database Results</h2>
-
-<ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
     <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.title %> - <% r.price %></li>
-    <% }); %>
-</ul>
+        <tr>
+            <td><% r.id %></td>
+            <td><% r.title %></td>
+            <td><% r.price %></td>
+        </tr>
+    <% }); %>    
+    </tbody>
+</table>
+
 
 </div>
 <% include ../partials/footer.ejs %>
