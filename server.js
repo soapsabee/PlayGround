@@ -1,4 +1,5 @@
 const express = require("express");
+var bodyParser = require('body-parser')
 const app = express();
 const { Pool } = require('pg');
 const pool = new Pool({
@@ -9,6 +10,10 @@ const pool = new Pool({
 app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
+
+
 app.get('/', (req, res) => res.render('pages/index'));
 app.get('/db', async (req, res) => {
     try {
