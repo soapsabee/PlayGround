@@ -26,7 +26,7 @@ app.get('/db', async (req, res) => {
 app.post('/complete_add', async (req, res) =>{
 
   var title = "test"; //req.body.title;
-  var price = "test"; //req.body.price;
+  var price = 50; //req.body.price;
   var date = "test";//NOW();
 
   try {
