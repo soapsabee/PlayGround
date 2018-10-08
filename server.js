@@ -9,7 +9,7 @@ const pool = new Pool({
 app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.get('/', (req, res) => res.render('pages/index'))
+app.get('/', (req, res) => res.render('pages/index'));
 app.get('/db', async (req, res) => {
     try {
       const client = await pool.connect()
@@ -23,7 +23,7 @@ app.get('/db', async (req, res) => {
     }
   })
 
-app.post('/insert_pd/add', function (req, res) {
+app.post('/insert_pd/add', async (req, res) =>{
 
   try {
     const client = await pool.connect()
