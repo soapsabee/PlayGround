@@ -39,7 +39,7 @@ app.post('add', async (req, res) =>{
 })
 
 
-
+app.get('/add',(req,res) => res.render('pages/add'));
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
 
