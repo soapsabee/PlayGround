@@ -25,9 +25,9 @@ app.get('/db', async (req, res) => {
 
 app.post('/complete_add', async (req, res) =>{
 
-  var title = req.body.title;
-  var price = req.body.price;
-  var date = NOW();
+  var title = "test"; //req.body.title;
+  var price = "test"; //req.body.price;
+  var date = "test";//NOW();
 
   try {
     const client = await pool.connect()
