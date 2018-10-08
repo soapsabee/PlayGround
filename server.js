@@ -27,7 +27,7 @@ app.post('/add', async (req, res) =>{
 
   try {
     const client = await pool.connect()
-    const result = await client.query('insert into product_table(title) values ("test")');
+    const result = await client.query(`insert into product_table(title) values ('test')`);
     //const results = { 'results': (result) ? result.rows : null};
     res.render('pages/add');
     console.log("OK");
