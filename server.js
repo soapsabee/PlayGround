@@ -23,7 +23,7 @@ app.get('/db', async (req, res) => {
     }
   })
 
-app.get('/insert_pd/add', async (req, res) => {
+app.post('/insert_pd/add', async (req, res) => {
 
   var id = req.body.id;
   var title = req.body.title;
