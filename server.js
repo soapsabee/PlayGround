@@ -23,13 +23,16 @@ app.get('/db', async (req, res) => {
     }
   })
 
-app.post('/add', async (req, res) =>{
+app.post('/complete_add', async (req, res) =>{
+
+  var title = req.body.title;
+  var price = req.body.price;
+  var date = NOW();
 
   try {
     const client = await pool.connect()
-    const result = await client.query(`insert into product_table(title) values ('test')`);
-    //const results = { 'results': (result) ? result.rows : null};
-    res.render('pages/add');
+    const result = await client.query(`insert into product_table(title,price,create_at) values ('${title}','${price}','${date}')`);
+    res.render('pages/complete_add');
     console.log("OK");
     client.end();
   } catch (err) {
