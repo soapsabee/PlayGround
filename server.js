@@ -1,5 +1,6 @@
 const express = require("express");
 var bodyParser = require('body-parser')
+let date = require('date-and-time');
 const app = express();
 const { Pool } = require('pg');
 const pool = new Pool({
@@ -32,11 +33,12 @@ app.post('/complete_add', async (req, res) =>{
 
   var title = req.body.title;
   var price = req.body.price;
-  var date = NOW();
+  let now = new Date();
+  date.format(now, 'YYYY/MM/DD');
 
   try {
     const client = await pool.connect()
-    const result = await client.query(`insert into product_table(title,price,create_at) values ('${title}','${price}','${date}')`);
+    const result = await client.query(`insert into product_table(title,price,create_at) values ('${title}','${price}','${now}')`);
     res.render('pages/complete_add');
     console.log("OK");
     client.end();
