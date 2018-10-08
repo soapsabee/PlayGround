@@ -37,8 +37,7 @@ app.post('/insert_pd/add', function (req, res) {
   }
 })
 
-  
-});
+
 
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
