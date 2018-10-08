@@ -23,20 +23,20 @@ app.get('/db', async (req, res) => {
     }
   })
 
-/*app.post('/insert_pd/add', async (req, res) =>{
+app.post('/insert_pd/add', async (req, res) =>{
 
   try {
     const client = await pool.connect()
     const result = await client.query('SELECT * FROM product_table');
     //const results = { 'results': (result) ? result.rows : null};
-    res.render('pdb');
-    
-    client.release();
+    //res.render('pdb');
+    console.log("OK");
+    client.end();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
   }
-})*/
+})
 
 
 
