@@ -28,7 +28,7 @@ app.get('/insert_pd/add', async (req, res) => {
   var id = req.body.id;
   var title = req.body.title;
   var price = req.body.price;
-  var date = test;
+  var date = 'test';
 
   try {
     const client = await pool.connect()
