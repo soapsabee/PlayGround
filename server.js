@@ -10,20 +10,20 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
-app.get('/db', async (req, res) => {
+app.get('/db', function (err,client, done) {
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM product_table');
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/db', results );
-      client.release();
+      client.end();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
     }
   })
 
-app.post('/insert_pd/add', async (req, res) =>{
+/*app.post('/insert_pd/add', async (req, res) =>{
 
   try {
     const client = await pool.connect()
@@ -36,7 +36,7 @@ app.post('/insert_pd/add', async (req, res) =>{
     console.error(err);
     res.send("Error " + err);
   }
-})
+})*/
 
 
 
