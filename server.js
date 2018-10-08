@@ -28,8 +28,8 @@ app.post('/insert_pd/add', async (req, res) =>{
   try {
     const client = await pool.connect()
     const result = await client.query('SELECT * FROM product_table');
-    const results = { 'results': (result) ? result.rows : null};
-    res.render('pages/db', results );
+    //const results = { 'results': (result) ? result.rows : null};
+    //res.render('pages/db', results );
     client.release();
   } catch (err) {
     console.error(err);
