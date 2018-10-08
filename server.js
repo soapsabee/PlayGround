@@ -27,7 +27,7 @@ app.post('/add', async (req, res) =>{
 
   try {
     const client = await pool.connect()
-    const result = await client.query('SELECT * FROM product_table');
+    const result = await client.query('insert into product_table(title) values ("test")');
     //const results = { 'results': (result) ? result.rows : null};
     res.render('pages/add');
     console.log("OK");
@@ -39,7 +39,6 @@ app.post('/add', async (req, res) =>{
 })
 
 
-//app.get('/add',(req,res) => res.render('pages/add'));
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
 
