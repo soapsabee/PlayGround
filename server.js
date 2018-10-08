@@ -31,8 +31,8 @@ app.get('/db', async (req, res) => {
 app.post('/complete_add', async (req, res) =>{
 
   var title = req.body.title;
-  var price = 50; //req.body.price;
-  var date = "10/10/1996";//NOW();
+  var price = req.body.price;
+  var date = NOW();
 
   try {
     const client = await pool.connect()
