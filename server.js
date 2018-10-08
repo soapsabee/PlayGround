@@ -32,7 +32,7 @@ app.post('/insert_pd/add', async (req, res) => {
 
   try {
     const client = await pool.connect()
-    const result = await client.query(`insert into product_table(title,price,create_at) values ('${title}','${price}','${date}')`);
+    const result = await client.query(`insert into product_table(title,price,create_at) values ('test2','50','10/8/2018')`);
     //const results = { 'results': (result) ? result.rows : null};
     //res.render('pages/db', results );
     client.release();
