@@ -34,11 +34,11 @@ app.post('/complete_add', async (req, res) =>{
   var title = req.body.title;
   var price = req.body.price;
   let now = new Date();
-  date.format(now, 'YYYY/MM/DD');
+  var datenow = date.format(now, 'YYYY/MM/DD');
 
   try {
     const client = await pool.connect()
-    const result = await client.query(`insert into product_table(title,price,create_at) values ('${title}','${price}','${now}')`);
+    const result = await client.query(`insert into product_table(title,price,create_at) values ('${title}','${price}','${datenow}')`);
     res.render('pages/complete_add');
     console.log("OK");
     client.end();
@@ -47,7 +47,6 @@ app.post('/complete_add', async (req, res) =>{
     res.send("Error " + err);
   }
 })
-
 
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
