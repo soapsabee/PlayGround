@@ -23,4 +23,21 @@ app.get('/db', async (req, res) => {
     }
   })
 
+app.get('/insert_pd/add', async (req, res) => {
+
+  try {
+    const client = await pool.connect()
+    const result = await client.query('SELECT * FROM product_table');
+    const results = { 'results': (result) ? result.rows : null};
+    res.render('pages/db', results );
+    client.release();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
+})
+
+app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
+app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
+
 app.listen(process.env.PORT || 8000);

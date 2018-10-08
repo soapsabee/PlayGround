@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<div class="container">
+    <br>
+    <br>
+    <form action = "/insert_pd/add" method = "post" >
+   <div class="form-group" style="">
+     <label for="ID">ID</label>
+     <input type="number" class="form-control" style="width:500px;" name="" id="ID" aria-describedby="helpId" placeholder="">
+     <label for="ID">Title</label>
+     <input type="text" class="form-control" style="width:500px;" name="" id="title" aria-describedby="helpId" placeholder="">
+     <label for="ID">Price</label>
+     <input type="text" class="form-control" style="width:500px;" name="" id="price" aria-describedby="helpId" placeholder="">
+     
+     <br>
+   
+     <!--<input name="" id="date" style="width:500px;" class="btn btn-light" type="text" value="" disabled> -->
+   </div>
+    <a name="" id="" class="btn btn-secondary" href="db" role="button">Cancel</a>
+    <a name="" id="" type ="submit" class="btn btn-primary" href="/insert_pd/add" role="button">Add New</a>
+   </form>
+</div>  
+
+
+
+<% include ../partials/footer.ejs %>
