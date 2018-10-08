@@ -25,9 +25,14 @@ app.get('/db', async (req, res) => {
 
 app.get('/insert_pd/add', async (req, res) => {
 
+  var id = req.body.id;
+  var title = req.body.title;
+  var price = req.body.price;
+  var date = test;
+
   try {
     const client = await pool.connect()
-    const result = await client.query('SELECT * FROM product_table');
+    const result = await client.query(`insert into product_table(title,price,create_at) values (${title},${price},${date})`);
     const results = { 'results': (result) ? result.rows : null};
     res.render('pages/db', results );
     client.release();
@@ -41,3 +46,4 @@ app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
 
 app.listen(process.env.PORT || 8000);
+
