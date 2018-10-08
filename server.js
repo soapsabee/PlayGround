@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
-app.get('/db', function (err,client, done) {
+app.get('/db', async (req, res) => {
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM product_table');
@@ -29,7 +29,7 @@ app.get('/db', function (err,client, done) {
     const client = await pool.connect()
     const result = await client.query('SELECT * FROM product_table');
     //const results = { 'results': (result) ? result.rows : null};
-    res.render('/db');
+    res.render('pdb');
     
     client.release();
   } catch (err) {
