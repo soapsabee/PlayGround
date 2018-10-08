@@ -23,7 +23,7 @@ app.get('/db', async (req, res) => {
     }
   })
 
-app.post('/insert_pd/add', async (req, res) =>{
+app.post('add', async (req, res) =>{
 
   try {
     const client = await pool.connect()
