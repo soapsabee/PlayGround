@@ -29,7 +29,7 @@ app.post('add', async (req, res) =>{
     const client = await pool.connect()
     const result = await client.query('SELECT * FROM product_table');
     //const results = { 'results': (result) ? result.rows : null};
-    //res.render('pdb');
+    res.render('pages/add');
     console.log("OK");
     client.end();
   } catch (err) {
