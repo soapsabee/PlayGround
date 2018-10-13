@@ -33,9 +33,8 @@ app.get('/db', async (req, res) => {
   app.get('/db/id', function (req, res)  {
     
     var pid = req.params.id;
-    console.log("OK");
-    res.render('pages/db');
-    /*try {
+  
+     try {
       const client = await pool.connect()
       const result = await client.query(`SELECT * FROM product_table where id = ${pid}`);
       const results = { 'results': (result) ? result.rows : null};
@@ -44,7 +43,7 @@ app.get('/db', async (req, res) => {
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
-    }*/
+    }
   })
 
 
