@@ -28,8 +28,24 @@ app.get('/db', async (req, res) => {
       res.send("Error " + err);
     }
   })
-
   
+
+  app.get('/edit_pd:id', async (req, res) => {
+    
+    var pid = req.params.id;
+    
+    try {
+      const client = await pool.connect()
+      const result = await client.query(`SELECT * FROM product_table where id = ${pid}`);
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/edit_pd', results );
+      client.end();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
 
 app.post('/complete_add', async (req, res) =>{
 
@@ -51,11 +67,10 @@ app.post('/complete_add', async (req, res) =>{
 })
 
 app.post('/complete_del/:id', async (req, res) =>{
-  var pid = req.params.id;
-
+  
   try {
     const client = await pool.connect()
-    const result = await client.query(`delete from product_table values where id = ${pid}`);
+    const result = await client.query(`delete from product_table values where id = $`);
     res.render('pages/complete_del');
     console.log("OK");
     client.end();
