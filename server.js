@@ -29,14 +29,15 @@ app.get('/db', async (req, res) => {
     }
   })
 
-  let now = new Date();
-  let datenow = date.format(now, 'MM/DD/YYYY');
+  
 
 app.post('/complete_add', async (req, res) =>{
 
   var title = req.body.title;
   var price = req.body.price;
-  
+  let now = new Date();
+  let datenow = date.format(now, 'MM/DD/YYYY');
+
   try {
     const client = await pool.connect()
     const result = await client.query(`insert into product_table(title,price,create_at) values ('${title}','${price}','${datenow}')`);
@@ -49,7 +50,20 @@ app.post('/complete_add', async (req, res) =>{
   }
 })
 
-  console.log(datenow);
+app.post('/complete_del', async (req, res) =>{
+  try {
+    const client = await pool.connect()
+    const result = await client.query(`delete from product_table values where id = 1`);
+    res.render('pages/complete_del');
+    console.log("OK");
+    client.end();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
+})
+
+  
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
 
