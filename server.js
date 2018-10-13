@@ -30,7 +30,7 @@ app.get('/db', async (req, res) => {
   })
 
   let now = new Date();
-  var datenow = date.format(now, 'MM/DD/YYYY');
+  let datenow = date.format(now, 'MM/DD/YYYY');
 
 app.post('/complete_add', async (req, res) =>{
 
