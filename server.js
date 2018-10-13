@@ -50,10 +50,12 @@ app.post('/complete_add', async (req, res) =>{
   }
 })
 
-app.post('/complete_del', async (req, res) =>{
+app.post('/complete_del/:id', async (req, res) =>{
+  var pid = req.params.id;
+
   try {
     const client = await pool.connect()
-    const result = await client.query(`delete from product_table values where id = 1`);
+    const result = await client.query(`delete from product_table values where id = ${pid}`);
     res.render('pages/complete_del');
     console.log("OK");
     client.end();
