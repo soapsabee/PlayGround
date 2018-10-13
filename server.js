@@ -30,7 +30,7 @@ app.get('/db', async (req, res) => {
   })
   
 
-  app.get('/db/:id', function (req, res)  {
+  app.get('/db/id', function (req, res)  {
     
     var pid = req.params.id;
     console.log("OK");
