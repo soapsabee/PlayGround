@@ -34,6 +34,7 @@ app.get('/db', async (req, res) => {
     
     var pid = req.params.id;
     console.log("OK");
+    res.render('pages/db');
     /*try {
       const client = await pool.connect()
       const result = await client.query(`SELECT * FROM product_table where id = ${pid}`);
