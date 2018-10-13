@@ -34,7 +34,7 @@ app.post('/complete_add', async (req, res) =>{
   var title = req.body.title;
   var price = req.body.price;
   let now = new Date();
-  var datenow = date.format(now, 'YYYY/MM/DD');
+  var datenow = date.format(now, 'MM/DD/YYYY');
 
   try {
     const client = await pool.connect()
