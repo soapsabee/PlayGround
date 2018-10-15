@@ -32,8 +32,7 @@ app.get('/db', async (req, res) => {
 
   app.get('/db/:id',  async (req, res) => {
     
-    res.render('pages/edit_pd');
-   /* var pid = req.params.id;
+    var pid = req.params.id;
   
      try {
       const client = await pool.connect()
@@ -44,7 +43,7 @@ app.get('/db', async (req, res) => {
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
-    }*/
+    }
   })
 
 
