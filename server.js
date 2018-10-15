@@ -32,7 +32,7 @@ app.get('/db', async (req, res) => {
 
   app.get('/db/:id',  async (req, res) => {
     
-    res.render('pages/edit_pd');
+    res.render('pages/index');
    /* var pid = req.params.id;
   
      try {
