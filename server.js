@@ -30,7 +30,7 @@ app.get('/db', async (req, res) => {
   })
   
 
-  app.get('/db/:id',  async (req, res) => {
+  /*app.get('/db/:id',  async (req, res) => {
     
     var pid = req.params.id;
   
@@ -44,7 +44,7 @@ app.get('/db', async (req, res) => {
       console.error(err);
       res.send("Error " + err);
     }
-  })
+  })*/
 
 
 app.post('/complete_add', async (req, res) =>{
