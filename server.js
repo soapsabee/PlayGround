@@ -80,7 +80,7 @@ app.post('/complete_add', async (req, res) =>{
   }
 })*/
 
-app.post('db/complete_del/:id',(req,res) => res.render('pages/complete_del'));  
+app.post('complete_del',(req,res) => res.render('pages/complete_del'));  
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
 
