@@ -32,7 +32,9 @@ app.get('/db', async (req, res) => {
 
   app.get('/db/:id',  async (req, res) => {
     
-    var pid = req.params.id;
+    res.send("tagId is set to " + req.params.id);
+
+   /* var pid = req.params.id;
   
      try {
       const client = await pool.connect()
@@ -43,7 +45,7 @@ app.get('/db', async (req, res) => {
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
-    }
+    }*/
   })
 
 
