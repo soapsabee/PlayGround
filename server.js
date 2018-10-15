@@ -22,6 +22,7 @@ app.get('/db', async (req, res) => {
       const result = await client.query('SELECT * FROM product_table');
       const results = { 'results': (result) ? result.rows : null};
       res.send('pages/db'+ result );
+      console.log(result);
       client.end();
     } catch (err) {
       console.error(err);
