@@ -38,7 +38,8 @@ app.get('/db', async (req, res) => {
       const client = await pool.connect()
       const result = await client.query(`SELECT * FROM product_table where id = ${pid}`);
       const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/edit_pd', results );
+      console.log(results.id);
+      // res.render('pages/edit_pd', results );
       client.end();
     } catch (err) {
       console.error(err);
