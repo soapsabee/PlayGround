@@ -32,8 +32,7 @@ app.get('/db', async (req, res) => {
 
   app.get('/db/:id',  async (req, res) => {
     
-    res.send("tagId is set to " + req.params.id);
-
+    res.render('pages/edit_pd');
    /* var pid = req.params.id;
   
      try {
