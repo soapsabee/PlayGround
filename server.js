@@ -64,7 +64,7 @@ app.post('/complete_add', async (req, res) =>{
   }
 })
 
-app.post('/db/complete_del/:id', async (req, res) =>{
+app.get('/db/complete_del/:id', async (req, res) =>{
   var pid = req.params.id;
   try {
     const client = await pool.connect()
