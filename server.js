@@ -21,8 +21,7 @@ app.get('/db', async (req, res) => {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM product_table');
       const results = { 'results': (result) ? result.rows : null};
-      res.send('pages/db'+ result );
-      console.log('test'+results);
+      res.render('pages/db', results );
       client.end();
     } catch (err) {
       console.error(err);
@@ -39,7 +38,7 @@ app.get('/db', async (req, res) => {
       const client = await pool.connect()
       const result = await client.query(`SELECT * FROM product_table where id = ${pid}`);
       const results = { 'results': (result) ? result.rows : null};
-      res.send('test' + result.id);
+      res.send('test' + result.rows[0]);
       // res.render('pages/edit_pd', results );
       client.end();
     } catch (err) {
