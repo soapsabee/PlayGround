@@ -53,7 +53,7 @@ app.get('/db', async (req, res) => {
 
      try {
       const client = await pool.connect()
-      const result = await client.query(`UPDATE product_table SET id = '9',title = 'test',price = '150',create_at = '2018/10/13' where id = '9'`);
+      const result = await client.query("UPDATE product_table SET id = '9',title = 'test',price = '150',create_at = '2018/10/13' where id = '9'");
       //const results = { 'results': (result) ? result.rows : null};
       //res.render('pages/db');
       client.end();
