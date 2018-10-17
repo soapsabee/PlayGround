@@ -45,15 +45,15 @@ app.get('/db', async (req, res) => {
   })
 
   app.post('/db/save/',  async (req, res) => {
-    /*var pid = req.body.id;
-    var title = req.body.title;
+    var pid = req.body.id;
+    /*var title = req.body.title;
     var price = req.body.price;
     var date = req.body.create_at;*/
 
 
      try {
       const client = await pool.connect()
-      const result = await client.query("UPDATE product_table SET id = '9',title = 'test',price = '150',create_at = '2018/10/13' where id = '9'");
+      const result = await client.query(`UPDATE product_table SET id = ${pid},title = 'test2',price = '150',create_at = '2018/10/13' where id = ${pid}`);
       //const results = { 'results': (result) ? result.rows : null};
       res.render('pages/save');
       client.end();
