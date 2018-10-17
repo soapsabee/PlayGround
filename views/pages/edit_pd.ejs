@@ -13,7 +13,13 @@
      <input type="text" class="form-control" style="width:500px;" name="price" id="price" aria-describedby="helpId" value="<%= results[0].price %>">
      <label for="date">Create At</label>
      <br>
-     <input id="datepicker" name="create_at" width="276" value="<%= results[0].create_at %>" />
+     <script>
+     var date = results[0].create_at;
+     var day=dateFormat(date, "yyyy-mm-dd");
+     document.getElementById("datepicker").value = day;
+     </script>
+    
+     <input id="datepicker" name="create_at" width="276" value />
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
