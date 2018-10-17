@@ -14,7 +14,7 @@
      <label for="date">Create At</label>
      <br>
      <script>
-     var date = results[0].create_at;
+     var date =  `${results[0].create_at}` ;
      var day=dateFormat(date, "yyyy-mm-dd");
      console.log(day);
      document.getElementById("datepicker").value = day;
