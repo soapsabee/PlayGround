@@ -48,7 +48,7 @@ app.get('/db', async (req, res) => {
     var pid = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
-    var date = req.body.create_at;
+    var date = 'test';//req.body.create_at;
 
 
      try {
