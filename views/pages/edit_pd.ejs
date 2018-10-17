@@ -14,11 +14,11 @@
      <label for="date">Create At</label>
      <br>
      <script>
-     var dateFormat = require('dateformat');
-     var date ='<%= results[0].create_at %>' ;
-     var day=dateFormat(date, "yyyy-mm-dd");
-     console.log(day);
-     document.getElementById("datepicker").value = day;
+     let date = require('date-and-time');
+     var datenow ='<%= results[0].create_at %>' ;
+     let showdate = date.format(datenow, 'MM/DD/YYYY');
+     console.log(showdate);
+     document.getElementById("datepicker").value = showdate;
      </script>
     
      <input id="datepicker" name="create_at" width="276" value />
