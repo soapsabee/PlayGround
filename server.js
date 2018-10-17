@@ -48,12 +48,12 @@ app.get('/db', async (req, res) => {
     var pid = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
-    var date = 'test';//req.body.create_at;
+    var date = req.body.create_at;
 
 
      try {
       const client = await pool.connect()
-      const result = await client.query(`update product_table set title = ${title} , price = ${price}, create_at = ${date} where id = ${pid}`);
+      const result = await client.query(`update product_table set id = ${pid},title = ${title} , price = ${price}, create_at = ${date} where id = ${pid}`);
       //const results = { 'results': (result) ? result.rows : null};
       res.render('pages/db');
       client.end();
