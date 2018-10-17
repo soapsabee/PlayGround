@@ -44,7 +44,7 @@ app.get('/db', async (req, res) => {
     }
   })
 
-  app.get('/db/save/',  async (req, res) => {
+  app.post('/db/save/',  async (req, res) => {
     var pid = req.body.id;
     var title = req.body.title;
     var price = req.body.price;
