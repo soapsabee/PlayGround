@@ -44,6 +44,25 @@ app.get('/db', async (req, res) => {
     }
   })
 
+  app.get('/db/save/',  async (req, res) => {
+    var pid = req.body.id;
+    var title = req.body.title;
+    var price = req.body.price;
+    var date = req.body.create_at;
+
+
+     try {
+      const client = await pool.connect()
+      const result = await client.query(`update product_table set title = ${title} , price = ${price}, date = ${date} where id = ${pid}`);
+      //const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/db');
+      client.end();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
 
 app.post('/complete_add', async (req, res) =>{
 
