@@ -13,15 +13,9 @@
      <input type="text" class="form-control" style="width:500px;" name="price" id="price" aria-describedby="helpId" value="<%= results[0].price %>">
      <label for="date">Create At</label>
      <br>
-     <script>
-     let date = require('date-and-time');
-     var datenow ='<%= results[0].create_at %>' ;
-     let showdate = date.format(datenow, 'MM/DD/YYYY');
-     console.log(showdate);
-     document.getElementById("datepicker").value = showdate;
-     </script>
+     
     
-     <input id="datepicker" name="create_at" width="276" value />
+     <input id="datepicker" name="create_at" width="276" value="<%= results[0].create_at %>" />
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
