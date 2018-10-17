@@ -44,7 +44,7 @@ app.get('/db', async (req, res) => {
     }
   })
 
-  app.post('/db/save/',  async (req, res) => {
+  app.post('/save',  async (req, res) => {
     var pid = req.body.id;
     
     /*var title = req.body.title;
@@ -60,7 +60,7 @@ app.get('/db', async (req, res) => {
       client.end();
     } catch (err) {
       console.error(err);
-      res.send("Error " + err,pid);
+      res.send("Error " + pid);
 
     }
   })
