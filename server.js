@@ -48,12 +48,12 @@ app.get('/db', async (req, res) => {
     var bid = req.body.id;
     
     var title = req.body.title;
-    res.send(bid);
+    
     /*var price = req.body.price;
     var date = req.body.create_at;*/
 
 
-/*try {
+try {
       const client = await pool.connect()
       const result = await client.query(`UPDATE product_table SET title = ${title},price = '150',create_at = '2018/10/13' where id = '9'`);
       //const results = { 'results': (result) ? result.rows : null};
@@ -61,9 +61,9 @@ app.get('/db', async (req, res) => {
       client.end();
     } catch (err) {
       console.error(err);
-      res.send("Error " + bid);
+      res.send("Error " + title);
 
-    }*/
+    }
   })
 
 
