@@ -46,7 +46,7 @@ app.get('/db', async (req, res) => {
   })
 
   app.get('/search_pd',  async (req, res) => {
-    var text = req.params.boxsearch;
+    var text = req.param.boxsearch;
     res.send(text);
     /* try {
       const client = await pool.connect()
