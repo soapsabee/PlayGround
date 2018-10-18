@@ -49,7 +49,7 @@ app.get('/db', async (req, res) => {
     var text = req.body.boxsearch;
      try {
       const client = await pool.connect()
-      const result = await client.query(`SELECT * FROM product_table where id = ${text} or title like '%${text}%' or create_at like '%${text}%'`);
+      const result = await client.query(`SELECT * FROM product_table where title like '%${text}%' or create_at like '%${text}%'`);
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/search_pd', results );
       client.end();
