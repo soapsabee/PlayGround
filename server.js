@@ -46,7 +46,7 @@ app.get('/db', async (req, res) => {
   })
 
   app.get('/search_pd',  async (req, res) => {
-    var text = req.body.boxsearch;
+    var text = req.params.boxsearch;
      try {
       const client = await pool.connect()
       const result = await client.query(`SELECT * FROM product_table where title LIKE '%${text}%' or create_at LIKE '%${text}%'`);
