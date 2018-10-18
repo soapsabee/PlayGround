@@ -45,10 +45,10 @@ app.get('/db', async (req, res) => {
   })
 
   app.post('/db/save',  async (req, res) => {
-    //var bid = req.body.id;
+    var bid = req.body.id;
     
     var title = req.body.title;
-    res.send(title);
+    res.send(bid);
     /*var price = req.body.price;
     var date = req.body.create_at;*/
 
