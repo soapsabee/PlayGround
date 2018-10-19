@@ -216,7 +216,7 @@ app.get('/product_report',  async (req, res) => {
     const client = await pool.connect()
     const result = await client.query(`select tag,count(*) from product_table group by tag`);
     const results = { 'results': (result) ? result.rows : null};
-    res.render('pages/search_pd', results );
+    res.render('pages/product_report', results );
     client.end();
   } catch (err) {
     console.error(err);
