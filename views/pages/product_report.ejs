@@ -90,9 +90,7 @@ var chart = new Chart(ctx, {
             total = total + parseInt("<%= r.count %>") ;
             </script>
     <% }); %>   
-        <script>
-        document.getElementById("total").innerHTML = "W3Schools";
-        </script>
+        
 
     </tbody>
 
@@ -100,5 +98,7 @@ var chart = new Chart(ctx, {
 <div id ="total"> </div>
 
 </div>
-
+<script>
+        document.getElementById("total").innerHTML = total;
+</script>
 <% include ../partials/footer.ejs %>
