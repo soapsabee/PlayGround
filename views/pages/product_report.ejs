@@ -84,7 +84,7 @@ var chart = new Chart(ctx, {
         
         </tr>
         <script>
-            var total = total + <%= r.count %> ;
+            var total = total + parseInt(<%= r.count %>) ;
             console.log(total);
         </script>
     <% }); %>   
