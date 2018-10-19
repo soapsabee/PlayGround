@@ -206,6 +206,7 @@ app.get('/users_list/complete_del/:id', async (req, res) =>{
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/insert_user',(req,res) => res.render('pages/insert_user'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
+app.get('/product_report',(req,res) => res.render('pages/product_report'));
 
 app.listen(process.env.PORT || 8000);
 
