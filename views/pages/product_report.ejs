@@ -76,7 +76,6 @@ var chart = new Chart(ctx, {
         </tr>
     </thead>
     <tbody>
-    <% var sum = 0;  %>
     <% results.forEach(function(r) { %>
         <tr>
             <td><%= r.tag %></td>
@@ -85,7 +84,7 @@ var chart = new Chart(ctx, {
         
         </tr>
         <script>
-            var total = total + <%= sum %> ;
+            var total = total + <%= r.count %> ;
             console.log(total);
         </script>
     <% }); %>   
