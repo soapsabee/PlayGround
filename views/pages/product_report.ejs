@@ -76,12 +76,13 @@ var chart = new Chart(ctx, {
         </tr>
     </thead>
     <tbody>
+    <% var sum = 0;  %>
     <% results.forEach(function(r) { %>
         <tr>
             <td><%= r.tag %></td>
             <td><%= r.count %></td>               
         </tr>
-        <% var sum = r.count;  %>
+        <% var sum = sum + r.count;  %>
     <% }); %>   
 
     </tbody>
