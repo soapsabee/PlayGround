@@ -50,7 +50,7 @@ app.get('/db', async (req, res) => {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM users ORDER BY id ASC');
       const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/db', results );
+      res.render('pages/users_list', results );
       client.end();
     } catch (err) {
       console.error(err);
