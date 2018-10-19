@@ -136,19 +136,21 @@ app.post('/complete_add_pd', async (req, res) =>{
 
   var title = req.body.title;
   var price = req.body.price;
+  var tag = req.body.tag_product;
   let now = new Date();
   let datenow = date.format(now, 'MM/DD/YYYY');
-
+  res.send(tag);
+/*
   try {
     const client = await pool.connect()
-    const result = await client.query(`insert into product_table(title,price,create_at) values ('${title}','${price}','${datenow}')`);
+    const result = await client.query(`insert into product_table(title,price,create_at,tag) values ('${title}','${price}','${datenow}','${tag}')`);
     res.render('pages/complete_add');
     console.log("OK");
     client.end();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
-  }
+  }*/
 })
 
 app.post('/complete_add_user', async (req, res) =>{
@@ -206,7 +208,23 @@ app.get('/users_list/complete_del/:id', async (req, res) =>{
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/insert_user',(req,res) => res.render('pages/insert_user'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
-app.get('/product_report',(req,res) => res.render('pages/product_report'));
+//app.get('/product_report',(req,res) => res.render('pages/product_report'));
+
+
+/*app.get('/product_report',  async (req, res) => {
+  
+   try {
+    const client = await pool.connect()
+    const result = await client.query(`SELECT  FROM product_table  `);
+    const results = { 'results': (result) ? result.rows : null};
+    res.render('pages/search_pd', results );
+    client.end();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
+})*/
+
 
 app.listen(process.env.PORT || 8000);
 
