@@ -210,7 +210,7 @@ app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
 //app.get('/product_report',(req,res) => res.render('pages/product_report'));
 
 
-/*app.get('/product_report',  async (req, res) => {
+app.get('/product_report',  async (req, res) => {
   
    try {
     const client = await pool.connect()
@@ -222,7 +222,7 @@ app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
     console.error(err);
     res.send("Error " + err);
   }
-})*/
+})
 
 
 app.listen(process.env.PORT || 8000);
