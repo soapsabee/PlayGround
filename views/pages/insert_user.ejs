@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<div class="container">
+    <br>
+    <br>
+    <form action ="complete_add_user" method = "post" >
+   <div class="form-group" style="">
+     
+     <label for="ID">ID</label>
+     <input type="text" class="form-control" style="width:500px;" name="id" id="" aria-describedby="helpId" placeholder="">
+     <label for="ID">Email</label>
+     <input type="number" class="form-control" style="width:500px;" name="email" id="" aria-describedby="helpId" placeholder="">
+     <label for="ID">Password</label>
+     <input type="number" class="form-control" style="width:500px;" name="password" id="" aria-describedby="helpId" placeholder="">
+     <br>
+   
+     <!--<input name="" id="date" style="width:500px;" class="btn btn-light" type="text" value="" disabled> -->
+   </div>
+    <a name="" id="" class="btn btn-secondary" href="db" role="button">Cancel</a>
+     <button type="submit" class="btn btn-primary">AddNew</button>
+   </form>
+</div>  
+
+
+
+<% include ../partials/footer.ejs %>

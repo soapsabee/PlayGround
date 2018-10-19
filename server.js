@@ -82,7 +82,7 @@ try {
   })
 
 
-app.post('/complete_add', async (req, res) =>{
+app.post('/complete_add_pd', async (req, res) =>{
 
   var title = req.body.title;
   var price = req.body.price;
@@ -118,6 +118,7 @@ app.get('/db/complete_del/:id', async (req, res) =>{
 
 //app.post('/db/complete_del',(req,res) => res.render('pages/complete_del'));  
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
+app.get('/insert_user',(req,res) => res.render('pages/insert_user'));
 app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
 
 app.listen(process.env.PORT || 8000);
