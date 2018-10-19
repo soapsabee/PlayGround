@@ -139,8 +139,7 @@ app.post('/complete_add_pd', async (req, res) =>{
   var tag = req.body.tag_product;
   let now = new Date();
   let datenow = date.format(now, 'MM/DD/YYYY');
-  res.send(tag);
-/*
+
   try {
     const client = await pool.connect()
     const result = await client.query(`insert into product_table(title,price,create_at,tag) values ('${title}','${price}','${datenow}','${tag}')`);
@@ -150,7 +149,7 @@ app.post('/complete_add_pd', async (req, res) =>{
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
-  }*/
+  }
 })
 
 app.post('/complete_add_user', async (req, res) =>{
