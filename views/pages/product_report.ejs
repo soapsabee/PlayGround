@@ -81,17 +81,13 @@ var chart = new Chart(ctx, {
             <td><%= r.tag %></td>
             <td><%= r.count %></td>               
         </tr>
-        <% 
-        var sum = 0;
-        var sum = sum+r.count; 
-        
-        %>
         
     <% }); %>   
 
     </tbody>
 
 </table>
+<% var sum = 10;  %>
 <script>
  var total = <%= sum %> ;
   console.log(total);
