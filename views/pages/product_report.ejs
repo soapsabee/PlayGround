@@ -3,7 +3,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 
-<canvas id="myChart"h></canvas>
+<canvas id="myChart" style="height:200px;"></canvas>
 
 <script>
 
@@ -99,6 +99,6 @@ var chart = new Chart(ctx, {
 
 </div>
 <script>
-        document.getElementById("total").innerHTML = total;
+        document.getElementById("total").innerHTML = "Total :" + total;
 </script>
 <% include ../partials/footer.ejs %>
