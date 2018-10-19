@@ -45,6 +45,35 @@ app.get('/db', async (req, res) => {
     }
   })
 
+  app.get('/users_list', async (req, res) => {
+    try {
+      const client = await pool.connect()
+      const result = await client.query('SELECT * FROM users ORDER BY id ASC');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/db', results );
+      client.end();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
+  app.get('/user_list/:id',  async (req, res) => {
+    var pid = req.params.id;
+     try {
+      const client = await pool.connect()
+      const result = await client.query(`SELECT * FROM users where id = ${pid}`);
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/edit_user', results );
+      client.end();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+  
+  
+
   app.get('/search_pd',  async (req, res) => {
     var text = req.query.search;
      try {
