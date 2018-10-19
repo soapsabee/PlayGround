@@ -3,7 +3,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 
-<canvas id="myChart" style=" width:20px !important; height:150px !important;"></canvas>
+<canvas id="myChart" style="height:150px !important;"></canvas>
 
 <script>
 
@@ -81,7 +81,9 @@ var chart = new Chart(ctx, {
             <td><%= r.tag %></td>
             <td><%= r.count %></td>               
         </tr>
+        <% var sum = sum+count %>
     <% }); %>    
+    Total : <%= sum %>
     </tbody>
 </table>
 
