@@ -101,6 +101,27 @@ app.post('/complete_add_pd', async (req, res) =>{
   }
 })
 
+app.post('/complete_add_user', async (req, res) =>{
+
+  var id = req.body.id;
+  var email = req.body.email;
+  var password = req.body.password;
+  let now = new Date();
+  let datenow = date.format(now, 'MM/DD/YYYY');
+
+  try {
+    const client = await pool.connect()
+    const result = await client.query(`insert into users(id,email,password,create_at) values ('${id}','${email}','${password}','${create_at}')`);
+    res.render('pages/complete_add');
+    console.log("OK");
+    client.end();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
+})
+
+
 app.get('/db/complete_del/:id', async (req, res) =>{
   var pid = req.params.id;
 
