@@ -88,14 +88,15 @@ var chart = new Chart(ctx, {
         </tr>
         <script>
             total = total + parseInt("<%= r.count %>") ;
-            console.log(total);
-        </script>
+            document.getElementById('total').innerHTML(total);
+            </script>
     <% }); %>   
 
     </tbody>
 
 </table>
-
+        <div id="total">
+        </div>
 </div>
 
 <% include ../partials/footer.ejs %>
