@@ -92,8 +92,10 @@ var chart = new Chart(ctx, {
     </tbody>
 
 </table>
- Total:<%= sum %>
-
+<script>
+ var total = <%= sum %> ;
+  console.log(total);
+</script>
 </div>
 
 <% include ../partials/footer.ejs %>
