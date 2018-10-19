@@ -185,6 +185,22 @@ app.get('/db/complete_del/:id', async (req, res) =>{
   }
 })
 
+app.get('/users_list/complete_del/:id', async (req, res) =>{
+  var pid = req.params.id;
+
+  try {
+    const client = await pool.connect()
+    const result = await client.query(`delete from users values where id = ${pid}`);
+    res.render('pages/complete_del');
+    console.log("OK");
+    client.end();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
+})
+
+
 //app.post('/db/complete_del',(req,res) => res.render('pages/complete_del'));  
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/insert_user',(req,res) => res.render('pages/insert_user'));
