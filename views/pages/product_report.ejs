@@ -81,9 +81,10 @@ var chart = new Chart(ctx, {
             <td><%= r.tag %></td>
             <td><%= r.count %></td>               
         </tr>
+        <% var sum = sum+r.count %>
         
     <% }); %>    
-    
+        Total : <%= sum %>
     </tbody>
 </table>
 
