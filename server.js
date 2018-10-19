@@ -103,7 +103,6 @@ app.post('/complete_add_pd', async (req, res) =>{
 
 app.post('/complete_add_user', async (req, res) =>{
 
-  var id = req.body.id;
   var email = req.body.email;
   var password = req.body.password;
   let now = new Date();
@@ -111,7 +110,7 @@ app.post('/complete_add_user', async (req, res) =>{
 
   try {
     const client = await pool.connect()
-    const result = await client.query(`insert into users(id,email,password,create_at) values ('${id}','${email}','${password}','${datenow}')`);
+    const result = await client.query(`insert into users(email,password,create_at) values (${email}','${password}','${datenow}')`);
     res.render('pages/complete_add');
     console.log("OK");
     client.end();
