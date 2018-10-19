@@ -111,7 +111,7 @@ app.post('/complete_add_user', async (req, res) =>{
 
   try {
     const client = await pool.connect()
-    const result = await client.query(`insert into users(id,email,password,create_at) values ('${id}','${email}','${password}','${create_at}')`);
+    const result = await client.query(`insert into users(id,email,password,create_at) values ('${id}','${email}','${password}','${datenow}')`);
     res.render('pages/complete_add');
     console.log("OK");
     client.end();
