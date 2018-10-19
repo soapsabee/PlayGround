@@ -3,7 +3,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 
-<canvas id="myChart"></canvas>
+<canvas id="myChart" style=" width:20px !important; height:150px !important;"></canvas>
 
 <script>
 
@@ -14,48 +14,78 @@ var chart = new Chart(ctx, {
 
     // The data for our dataset
     data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"],
+        labels: ["Storage is now"],
         datasets: [{
             label: "Beauty",
             backgroundColor: 'rgb(255, 102, 178)',
             borderColor: 'rgb(255, 102, 178)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            data: [10],
             
         },
         {
             label: "Books",
             backgroundColor: 'rgb(255, 178, 102)',
             borderColor: 'rgb(255, 178, 102)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            data: [5],
     },{
 
             label: "Furniter",
             backgroundColor: 'rgb(0, 255, 255)',
             borderColor: 'rgb(0, 255, 255)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            data: [15],
 
     },{
             label: "Sport",
             backgroundColor: 'rgb(204, 255, 153)',
             borderColor: 'rgb(204, 255, 153)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            data: [50],
 
     },{
             label: "Technology",
             backgroundColor: 'rgb(64, 64, 64)',
             borderColor: 'rgb(64, 64, 64)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            data: [30],
 
     }]
     },
    
     // Configuration options go here
-    options: {}
+    options: { 
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero:true
+            }
+        }]
+    }}
 });
 
 
 
 </script>
 
+<div class="container">
+<h2>Database Results</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tag</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% results.forEach(function(r) { %>
+        <tr>
+            <td><%= r.tag %></td>
+            <td><%= r.count %></td>               
+        </tr>
+    <% }); %>    
+    </tbody>
+</table>
+
+
+</div>
 
 <% include ../partials/footer.ejs %>

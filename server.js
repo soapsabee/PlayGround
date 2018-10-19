@@ -210,11 +210,11 @@ app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
 //app.get('/product_report',(req,res) => res.render('pages/product_report'));
 
 
-/*app.get('/product_report',  async (req, res) => {
+app.get('/product_report',  async (req, res) => {
   
    try {
     const client = await pool.connect()
-    const result = await client.query(`SELECT  FROM product_table  `);
+    const result = await client.query(`select tag,count(*) from product_table group by tag`);
     const results = { 'results': (result) ? result.rows : null};
     res.render('pages/search_pd', results );
     client.end();
@@ -222,7 +222,7 @@ app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
     console.error(err);
     res.send("Error " + err);
   }
-})*/
+})
 
 
 app.listen(process.env.PORT || 8000);
