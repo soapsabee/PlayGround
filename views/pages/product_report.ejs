@@ -80,21 +80,20 @@ var chart = new Chart(ctx, {
     <% results.forEach(function(r) { %>
         <tr>
             <td><%= r.tag %></td>
-            <td><%= sum = sum + r.count %></td>   
+            <td><%= r.count %></td>   
                    
         
         </tr>
-        
+        <script>
+            var total = total + <%= sum %> ;
+            console.log(total);
+        </script>
     <% }); %>   
 
     </tbody>
 
 </table>
 
-<script>
- var total = <%= sum %> ;
-  console.log(total);
-</script>
 </div>
 
 <% include ../partials/footer.ejs %>
