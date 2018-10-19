@@ -110,6 +110,26 @@ try {
     }
   })
 
+  app.post('/users_list/save',  async (req, res) => {
+    var pid = req.body.id;
+    var email = req.body.email;
+    var password = req.body.password;
+    var date = req.body.create_at;
+
+
+try {
+      const client = await pool.connect()
+      const result = await client.query(`UPDATE product_table SET email = '${email}',password = ${password},create_at = '${date}' where id = ${pid}`);
+      //const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/save');
+      client.end();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+
+    }
+  })
+
 
 app.post('/complete_add_pd', async (req, res) =>{
 
