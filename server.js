@@ -58,7 +58,7 @@ app.get('/db', async (req, res) => {
     }
   })
 
-  app.get('/user_list/:id',  async (req, res) => {
+  app.get('/users_list/:id',  async (req, res) => {
     var pid = req.params.id;
      try {
       const client = await pool.connect()
