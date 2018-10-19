@@ -80,9 +80,10 @@ var chart = new Chart(ctx, {
     <% results.forEach(function(r) { %>
         <tr>
             <td><%= r.tag %></td>
-            <td><%= r.count %></td>               
+            <td><%= r.count %></td>   
+            <% sum = sum + r.count;  %>            
         </tr>
-        <% sum = sum + r.count;  %>
+        
     <% }); %>   
 
     </tbody>
