@@ -119,7 +119,7 @@ try {
 
 try {
       const client = await pool.connect()
-      const result = await client.query(`UPDATE product_table SET email = '${email}',password = ${password},create_at = '${date}' where id = ${pid}`);
+      const result = await client.query(`UPDATE users SET email = '${email}',password = ${password},create_at = '${date}' where id = ${pid}`);
       //const results = { 'results': (result) ? result.rows : null};
       res.render('pages/save');
       client.end();
