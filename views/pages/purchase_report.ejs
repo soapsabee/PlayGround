@@ -17,7 +17,7 @@ var chart = new Chart(ctx, {
     data: {
         labels: ["Storage is now"],
         datasets: [{
-            label: monthNames["<%= results2.results2[0].buy_at %>"],
+            label: monthNames[<%= results2.results2[0].buy_at %>],
             backgroundColor: 'rgb(255, 102, 178)',
             borderColor: 'rgb(255, 102, 178)',
             data: [0],
