@@ -230,7 +230,7 @@ app.get('/purchase_report',  async (req, res) => {
   let list = [];
   try {
     const client = await pool.connect()
-     list.result = await client.query(`select * from purchase;`);
+     list.result = await client.query(`select * from purchase;`).toArray();
      list.result2 = await client.query(`select sum(sale) from purchase group by to_char(buy_at,'MM');`);
     //const results = { 'results': (result) ? result.rows : null};
     //const results2 = { 'results2': (result2) ? result2.rows : null};
