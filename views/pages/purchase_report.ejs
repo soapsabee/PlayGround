@@ -17,12 +17,13 @@ var chart = new Chart(ctx, {
     data: {
         labels: ["Storage is now"],
         datasets: [
+            //ใช้ loop ของ javascript แทน นอนก่อน
             <% results2.forEach(function(r) { %>
             {   
             label: monthNames[<%= r.results2.buy_at %>],
             backgroundColor: 'rgb(255, 102, 178)',
             borderColor: 'rgb(255, 102, 178)',
-            data: ["<%= r.results2[0].sale %>"],
+            data: ["<%= r.results2.sale %>"],
             
         },
             <% }); %> 
