@@ -235,7 +235,7 @@ app.get('/purchase_report',  async (req, res) => {
     const result2 = await client.query(`select sum(sale) from purchase group by to_char(buy_at,'MM');`);
     const results = { 'results': (result) ? result.rows : null};
     const results2 = { 'results2': (result2) ? result2.rows : null};
-    res.query(results2 + results);
+    res.send(results2 + results);
     client.end();
   } catch (err) {
     console.error(err);
