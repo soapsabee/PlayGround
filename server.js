@@ -239,7 +239,7 @@ app.get('/purchase_report',  async (req, res) => {
     res.send("Error " + err);
   }
 
-  try {
+  /*try {
     const client = await pool.connect()
     const result2 = await client.query(`select sum(sale) from purchase group by to_char(buy_at,'MM');`);
     results2 = { 'results2': (result2) ? result2.rows : null};
@@ -247,7 +247,7 @@ app.get('/purchase_report',  async (req, res) => {
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
-  }
+  }*/
  res.send(results);
 })
 
