@@ -234,6 +234,7 @@ app.get('/purchase_report',  async (req, res) => {
     const result2 = await client2.query(`select sum(sale) from purchase group by to_char(buy_at,'MM')`);
    res.render('pages/purchase_report',{'results': result.rows},{'results2': result2.rows});
    client.end();
+   client2.end();
  } catch (err) {
    console.error(err);
    res.send("Error " + err);
