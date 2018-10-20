@@ -216,8 +216,8 @@ app.get('/product_report',  async (req, res) => {
     const client = await pool.connect()
     const result = await client.query(`select tag,count(*) from product_table group by tag`);
     const results = { 'results': (result) ? result.rows : null};
-    //res.render('pages/product_report', results );
-    res.send({results});
+    res.render('pages/product_report', results );
+   // res.send({results});
     client.end();
   } catch (err) {
     console.error(err);
@@ -234,8 +234,8 @@ app.get('/purchase_report',  async (req, res) => {
      const result2 = await client.query(`select sum(sale) as sale from purchase group by to_char(buy_at,'MM');`);
      const results = { 'results': (result) ? result.rows : null};
      const results2 = { 'results2': (result2) ? result2.rows : null};
-    //res.render("pages/purchase_report",{results2,results});
-    res.send({results2,results});
+    res.render("pages/purchase_report",{results2,results});
+    //res.send({results2,results});
     client.end();
   } catch (err) {
     console.error(err);
