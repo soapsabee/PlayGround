@@ -233,6 +233,7 @@ app.get('/purchase_report',  async (req, res) => {
     const client = await pool.connect()
     const result = await client.query(`select * from purchase;`);
     results = { 'results': (result) ? result.rows : null};
+    res.send(results);
     client.end();
   } catch (err) {
     console.error(err);
@@ -248,7 +249,7 @@ app.get('/purchase_report',  async (req, res) => {
     console.error(err);
     res.send("Error " + err);
   }*/
- res.send(results);
+ 
 })
 
 
