@@ -6,7 +6,7 @@
 <canvas id="myChart"></canvas>
 
 <script>
-var monthNames = ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
+var monthNames = ["","January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
 var ctx = document.getElementById('myChart').getContext('2d');
 ctx.canvas.height = 100;
 var chart = new Chart(ctx, {
@@ -17,32 +17,32 @@ var chart = new Chart(ctx, {
     data: {
         labels: ["Storage is now"],
         datasets: [{
-            label: monthNames[01],
+            label: monthNames[<%= results2.results2[0].buy_at %>],
             backgroundColor: 'rgb(255, 102, 178)',
             borderColor: 'rgb(255, 102, 178)',
             data: [0],
             
         },
         {
-            label: "5",
+            label: monthNames[<%= results2.results2[1].buy_at %>],
             backgroundColor: 'rgb(255, 178, 102)',
             borderColor: 'rgb(255, 178, 102)',
             data: [0],
     },{
 
-            label: "5",
+            label: monthNames[<%= results2.results2[2].buy_at %>],
             backgroundColor: 'rgb(0, 255, 255)',
             borderColor: 'rgb(0, 255, 255)',
             data: [0],
 
     },{
-            label: "5",
+            label: monthNames[<%= results2.results2[3].buy_at %>],
             backgroundColor: 'rgb(204, 255, 153)',
             borderColor: 'rgb(204, 255, 153)',
             data: [0],
 
     },{
-            label: "5",
+            label: monthNames[<%= results2.results2[4].buy_at %>],
             backgroundColor: 'rgb(64, 64, 64)',
             borderColor: 'rgb(64, 64, 64)',
             data: [0],
