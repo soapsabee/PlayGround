@@ -20,14 +20,14 @@ var chart = new Chart(ctx, {
             label: monthNames[<%= results2.results2[0].buy_at %>],
             backgroundColor: 'rgb(255, 102, 178)',
             borderColor: 'rgb(255, 102, 178)',
-            data: [0],
+            data: ["<%= results2.results2[0].sale %>"],
             
         },
         {
-            label: monthNames["<%= results2.results2[1].buy_at %>"],
+            label: monthNames[<%= results2.results2[1].buy_at %>],
             backgroundColor: 'rgb(255, 178, 102)',
             borderColor: 'rgb(255, 178, 102)',
-            data: [0],
+            data: ["<%= results2.results2[0].sale %>"],
     },{
 
             label: monthNames[0],
