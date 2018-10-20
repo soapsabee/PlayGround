@@ -231,7 +231,7 @@ app.get('/purchase_report',  async (req, res) => {
   try {
     const client = await pool.connect()
      const result = await client.query(`select * from purchase;`);
-     const result2 = await client.query(`select to_char(buy_at,'MM'),sum(sale) as sale from purchase group by to_char(buy_at,'MM') order by to_char(buy_at,'MM') ASC;`);
+     const result2 = await client.query(`select to_char(buy_at,'MM') as buy_at,sum(sale) as sale from purchase group by buy_at order by buy_at ASC;`);
      const results = { 'results': (result) ? result.rows : null};
      const results2 = { 'results2': (result2) ? result2.rows : null};
     res.render("pages/purchase_report",{results2,results});
