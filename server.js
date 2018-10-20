@@ -231,9 +231,11 @@ app.get('/purchase_report',  async (req, res) => {
   const results2;*/
   try {
     const client = await pool.connect()
-    const result = await client.query(`select sum(sale) from purchase group by to_char(buy_at,'MM');`);
+    const result = await client.query(`select * from purchase;`);
+    const result2 = await client.query(`select sum(sale) from purchase group by to_char(buy_at,'MM');`);
     const results = { 'results': (result) ? result.rows : null};
-    res.send(results);
+    const results2 = { 'results2': (result2) ? result2.rows : null};
+    res.send(results+results2);
     client.end();
   } catch (err) {
     console.error(err);
