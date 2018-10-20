@@ -227,31 +227,28 @@ app.get('/product_report',  async (req, res) => {
 
 app.get('/purchase_report',  async (req, res) => {
   
+  const results;
+  const results2;
   try {
-   const client = await pool.connect()
-   const result = await client.query(`select * from purchase`);
-   const client2 = await pool.connect()
-    const result2 = await client2.query(`select sum(sale) from purchase group by to_char(buy_at,'MM')`);
-   res.render('pages/purchase_report',{'results': result.rows},{'results2': result2.rows});
-   client.end();
-   client2.end();
- } catch (err) {
-   console.error(err);
-   res.send("Error " + err);
- }
+    const client = await pool.connect()
+    const result = await client.query(`select * from purchase;`);
+    results = { 'results': (result) ? result.rows : null};
+    client.end();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
 
- try {
-  const client = await pool.connect()
-  const result2 = await client.query(`select sum(sale) from purchase group by to_char(buy_at,'MM')`);
-  res.render('pages/purchase_report',{'results2': result2.rows});
-  client.end();
-} catch (err) {
-  console.error(err);
-  res.send("Error " + err);
-}
-
-
- 
+  try {
+    const client = await pool.connect()
+    const result2 = await client.query(`select sum(sale) from purchase group by to_char(buy_at,'MM');`);
+    results2 = { 'results2': (result2) ? result2.rows : null};
+    client.end();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
+ res.send(results +"-"+ results2);
 })
 
 
