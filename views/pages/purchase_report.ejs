@@ -1,0 +1,99 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
+<canvas id="myChart"></canvas>
+
+<script>
+
+var ctx = document.getElementById('myChart').getContext('2d');
+ctx.canvas.height = 100;
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: ["Storage is now"],
+        datasets: [{
+            label: "<%= results[0].tag %>",
+            backgroundColor: 'rgb(255, 102, 178)',
+            borderColor: 'rgb(255, 102, 178)',
+            data: ["<%= results[0].count %>"],
+            
+        },
+        {
+            label: "<%= results[1].tag %>",
+            backgroundColor: 'rgb(255, 178, 102)',
+            borderColor: 'rgb(255, 178, 102)',
+            data: ["<%= results[1].count %>"],
+    },{
+
+            label: "<%= results[2].tag %>",
+            backgroundColor: 'rgb(0, 255, 255)',
+            borderColor: 'rgb(0, 255, 255)',
+            data: ["<%= results[2].count %>"],
+
+    },{
+            label: "<%= results[3].tag %>",
+            backgroundColor: 'rgb(204, 255, 153)',
+            borderColor: 'rgb(204, 255, 153)',
+            data: ["<%= results[3].count %>"],
+
+    },{
+            label: "<%= results[4].tag %>",
+            backgroundColor: 'rgb(64, 64, 64)',
+            borderColor: 'rgb(64, 64, 64)',
+            data: ["<%= results[4].count %>"],
+
+    }]
+    },
+   
+    // Configuration options go here
+    options: { 
+    responsive: true,
+    maintainAspectRatio: true,
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero:true
+            }
+        }]
+    }}
+});
+
+
+
+</script>
+
+<div class="container">
+<h2>Database Results</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tag</th>
+        </tr>
+    </thead>
+    <tbody>
+ 
+    <% results.forEach(function(r) { %>
+        <tr>
+            <td><%= r.id %></td>
+            <td><%= r.tag %></td>   
+                   
+        
+        </tr>
+       
+    <% }); %>   
+        
+
+    </tbody>
+
+</table>
+<div id ="total"> </div>
+
+</div>
+
+<% include ../partials/footer.ejs %>
