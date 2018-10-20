@@ -227,12 +227,12 @@ app.get('/product_report',  async (req, res) => {
 
 app.get('/purchase_report',  async (req, res) => {
   
-  const results;
-  const results2;
+ /* const results;
+  const results2;*/
   try {
     const client = await pool.connect()
     const result = await client.query(`select * from purchase;`);
-    results = { 'results': (result) ? result.rows : null};
+    const results = { 'results': (result) ? result.rows : null};
     res.send(results);
     client.end();
   } catch (err) {
