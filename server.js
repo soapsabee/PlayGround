@@ -230,10 +230,11 @@ app.get('/purchase_report',  async (req, res) => {
   try {
    const client = await pool.connect()
    const result = await client.query(`select * from purchase`);
-   //const results = { 'results': (result) ? result.rows : null};
+   const results = { 'results': (result) ? result.rows : null};
    const result2 = await client.query(`select sum(sale) from purchase group by to_char(buy_at,'MM')`);
-   //const results2 = { 'results2': (result2) ? result2.rows : null};
-   res.render('pages/purchase_report', 'output',{"results":result , "results2":result2});
+   const results2 = { 'results2': (result2) ? result2.rows : null};
+   res.render('pages/purchase_report', results);
+   res.render('pages/purchase_report', results2);
    client.end();
  } catch (err) {
    console.error(err);
