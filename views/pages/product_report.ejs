@@ -26,25 +26,25 @@ var chart = new Chart(ctx, {
             label: "<%= results[1].tag %>",
             backgroundColor: 'rgb(255, 178, 102)',
             borderColor: 'rgb(255, 178, 102)',
-            data: [15],
+            data: ["<%= results[1].count %>"],
     },{
 
             label: "<%= results[2].tag %>",
             backgroundColor: 'rgb(0, 255, 255)',
             borderColor: 'rgb(0, 255, 255)',
-            data: [2],
+            data: ["<%= results[2].count %>"],
 
     },{
             label: "<%= results[3].tag %>",
             backgroundColor: 'rgb(204, 255, 153)',
             borderColor: 'rgb(204, 255, 153)',
-            data: [23],
+            data: ["<%= results[3].tag %>"],
 
     },{
             label: "<%= results[4].tag %>",
             backgroundColor: 'rgb(64, 64, 64)',
             borderColor: 'rgb(64, 64, 64)',
-            data: [12],
+            data: ["<%= results[4].tag %>"],
 
     }]
     },
