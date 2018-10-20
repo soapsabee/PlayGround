@@ -27,13 +27,13 @@ var chart = new Chart(ctx, {
             label: monthNames[<%= results2.results2[1].buy_at %>],
             backgroundColor: 'rgb(255, 178, 102)',
             borderColor: 'rgb(255, 178, 102)',
-            data: ["<%= results2.results2[0].sale %>"],
+            data: ["<%= results2.results2[1].sale %>"],
     },{
 
-            label: monthNames[0],
+            label: monthNames[<%= results2.results2[2].buy_at %>],
             backgroundColor: 'rgb(0, 255, 255)',
             borderColor: 'rgb(0, 255, 255)',
-            data: [0],
+            data: ["<%= results2.results2[2].sale %>"],
 
     },{
             label: monthNames[0],
