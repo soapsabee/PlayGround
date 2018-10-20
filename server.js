@@ -248,7 +248,7 @@ app.get('/purchase_report',  async (req, res) => {
     console.error(err);
     res.send("Error " + err);
   }
- res.send(results +"-"+ results2);
+ res.send(results);
 })
 
 
