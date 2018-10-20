@@ -6,7 +6,7 @@
 <canvas id="myChart"></canvas>
 
 <script>
-
+var monthNames = ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
 var ctx = document.getElementById('myChart').getContext('2d');
 ctx.canvas.height = 100;
 var chart = new Chart(ctx, {
@@ -17,7 +17,7 @@ var chart = new Chart(ctx, {
     data: {
         labels: ["Storage is now"],
         datasets: [{
-            label: "Jan",
+            label: monthNames[01],
             backgroundColor: 'rgb(255, 102, 178)',
             borderColor: 'rgb(255, 102, 178)',
             data: [0],
