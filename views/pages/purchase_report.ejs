@@ -22,7 +22,7 @@ var chart = new Chart(ctx, {
             //ใช้ loop ของ javascript แทน นอนก่อน
              results2.forEach(function(r) { 
             {   
-            label: monthNames[<%= r.results2.buy_at %>],
+            label: monthNames[r.results2.buy_at],
             backgroundColor: 'rgb(255, 102, 178)',
             borderColor: 'rgb(255, 102, 178)',
             data: ["<%= r.results2.sale %>"],
