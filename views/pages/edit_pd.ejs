@@ -27,7 +27,7 @@
    </div>
     <a name="" id="" class="btn btn-secondary" href="/product_list" role="button">Cancel</a>
     <button type="submit" class="btn btn-primary">Save</button>
-    <a name="" id="" class="btn btn-danger"  href="complete_del_pd/<%= results[0].id %>" role="button" data-toggle="modal" data-target="#BoxSave">Delete</a>
+    <a name="" id="" class="btn btn-danger" role="button" data-toggle="modal" data-target="#BoxSave">Delete</a>
     </form>
   
 
@@ -50,7 +50,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ไม่</button>
-        <button type="button" class="btn btn-primary">ใช่</button>
+        <button type="button" class="btn btn-primary" href="complete_del_pd/<%= results[0].id %>">ใช่</button>
       </div>
     </div>
   </div>
