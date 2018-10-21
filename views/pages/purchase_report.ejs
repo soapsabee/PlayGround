@@ -38,14 +38,16 @@ var chart = new Chart(ctx, {
 
 function getLineData() {
   var data = []
-
+  <% var ei = 0 %>
   for(var i=0; i < test; i++) {
+   
     data.push({
-        label: monthNames[`<%= results2.results2[${i}].buy_at %>`],
+        label: monthNames[<%= results2.results2[ei].buy_at %>],
         backgroundColor: 'rgb(255, 102, 178)',
         borderColor: 'rgb(255, 102, 178)',
         data: [5],
          });
+         <% ei++ %>
   }
 
   return data
