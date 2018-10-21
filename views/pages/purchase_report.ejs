@@ -6,6 +6,7 @@
 <canvas id="myChart"></canvas>
 
 <script>
+var i;
 var test = <%= results2.results2.length %>;
 console.log(test);
 var monthNames = ["","January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
@@ -19,7 +20,7 @@ var chart = new Chart(ctx, {
     data: {
         labels: ["Storage is now"],
         datasets:[
-           for(var i =0;i<test;i++){
+           for(i =0;i<test;i++){
             {   
             label: monthNames[1],
             backgroundColor: 'rgb(255, 102, 178)',
