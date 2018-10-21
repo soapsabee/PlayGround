@@ -143,7 +143,7 @@ app.post('/complete_add_pd', async (req, res) =>{
   try {
     const client = await pool.connect()
     const result = await client.query(`insert into product_table(title,price,create_at,tag) values ('${title}','${price}','${datenow}','${tag}')`);
-    res.render('pages/complete_add');
+    res.render('pages/complete_add_pd');
     console.log("OK");
     client.end();
   } catch (err) {
@@ -162,7 +162,7 @@ app.post('/complete_add_user', async (req, res) =>{
   try {
     const client = await pool.connect()
     const result = await client.query(`insert into users(email,password,create_at) values ('${email}','${password}','${datenow}')`);
-    res.render('pages/complete_add');
+    res.render('pages/complete_add_user');
     console.log("OK");
     client.end();
   } catch (err) {
@@ -172,13 +172,13 @@ app.post('/complete_add_user', async (req, res) =>{
 })
 
 
-app.get('/product_list/complete_del/:id', async (req, res) =>{
+app.get('/product_list/complete_del_pd/:id', async (req, res) =>{
   var pid = req.params.id;
 
   try {
     const client = await pool.connect()
     const result = await client.query(`delete from product_table values where id = ${pid}`);
-    res.render('pages/complete_del');
+    res.render('pages/complete_del_pd');
     console.log("OK");
     client.end();
   } catch (err) {
@@ -187,15 +187,13 @@ app.get('/product_list/complete_del/:id', async (req, res) =>{
   }
 })
 
-app.get('/users_list/complete_del/:id', async (req, res) =>{
+app.get('/users_list/complete_del_user/:id', async (req, res) =>{
   var pid = req.params.id;
 
   try {
     const client = await pool.connect()
     const result = await client.query(`delete from users values where id = ${pid}`);
-    alert("Delete Complete");
-    res.render('pages/complete_del');
-    res.redirect('pages/users_list');
+    res.render('pages/complete_del_user');
     console.log("OK");
     client.end();
   } catch (err) {
