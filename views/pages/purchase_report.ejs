@@ -19,7 +19,7 @@ var chart = new Chart(ctx, {
     // The data for our dataset
     data: {
         labels: ["Storage is now"],
-        datasets:[]
+        datasets:getLineData(),
     },
    
     // Configuration options go here
@@ -35,14 +35,21 @@ var chart = new Chart(ctx, {
     }}
 });
 
-for(i=0; i < test; i++){
-    chart.datasets.push({
-    label: monthNames[1],
-    backgroundColor: 'rgb(255, 102, 178)',
-    borderColor: 'rgb(255, 102, 178)',
-    data: [5],
-     });
-    } 
+
+function getLineData() {
+  var data = []
+
+  for(var i=0; i < times; i++) {
+    data.push({
+        label: monthNames[1],
+        backgroundColor: 'rgb(255, 102, 178)',
+        borderColor: 'rgb(255, 102, 178)',
+        data: [5],
+         });
+  }
+
+  return data
+}
 
 </script>
 
