@@ -193,7 +193,9 @@ app.get('/users_list/complete_del/:id', async (req, res) =>{
   try {
     const client = await pool.connect()
     const result = await client.query(`delete from users values where id = ${pid}`);
+    alert("Delete Complete");
     res.render('pages/complete_del');
+    res.redirect('pages/users_list');
     console.log("OK");
     client.end();
   } catch (err) {
