@@ -16,32 +16,8 @@ var chart = new Chart(ctx, {
     // The data for our dataset
     data: {
         labels: ["คลังสินค้า ณ ปัจจุบัน"],
-        datasets: [{
-            label: "<%= results[0].tag %>",
-            backgroundColor: 'rgb(255, 102, 178)',
-            borderColor: 'rgb(255, 102, 178)',
-            data: ["<%= results[0].count %>"],
-            
-        },
-        {
-            label: "<%= results[1].tag %>",
-            backgroundColor: 'rgb(255, 178, 102)',
-            borderColor: 'rgb(255, 178, 102)',
-            data: ["<%= results[1].count %>"],
-    },{
-
-            label: "<%= results[2].tag %>",
-            backgroundColor: 'rgb(0, 255, 255)',
-            borderColor: 'rgb(0, 255, 255)',
-            data: ["<%= results[2].count %>"],
-
-    },{
-            label: "<%= results[3].tag %>",
-            backgroundColor: 'rgb(204, 255, 153)',
-            borderColor: 'rgb(204, 255, 153)',
-            data: ["<%= results[3].count %>"],
-
-    }]
+        datasets: getLineData(),
+           
     },
    
     // Configuration options go here
@@ -57,7 +33,30 @@ var chart = new Chart(ctx, {
     }}
 });
 
+function getLineData() {
+  var data = []
+  //for(var i=0; i < test; i++) {
+   <% for(var ei =0; ei <results.length; ei++){ %>
+    data.push({
+        label: <%= results[ei].tag %>,
+        backgroundColor: getRandomColor(),
+        data: [<%= results[ei].count %>],
+        
+         });
+        
+ <% } %>
 
+  return data
+  
+}
+function getRandomColor() {
+      var letters = '0123456789ABCDEF'.split('');
+      var color = '#';
+      for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
 </script>
 
