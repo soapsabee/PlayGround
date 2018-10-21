@@ -19,15 +19,7 @@ var chart = new Chart(ctx, {
     // The data for our dataset
     data: {
         labels: ["Storage is now"],
-        datasets:[
-           for(i =0;i<test;i++){
-            {   
-            label: monthNames[1],
-            backgroundColor: 'rgb(255, 102, 178)',
-            borderColor: 'rgb(255, 102, 178)',
-            data: [5],
-            } } 
-            ]
+        datasets:[]
     },
    
     // Configuration options go here
@@ -43,7 +35,14 @@ var chart = new Chart(ctx, {
     }}
 });
 
- 
+for(i=0; i < test; i++){
+    ctx.datasets.push({
+    label: monthNames[1],
+    backgroundColor: 'rgb(255, 102, 178)',
+    borderColor: 'rgb(255, 102, 178)',
+    data: [5],
+     });
+    } 
 
 </script>
 
