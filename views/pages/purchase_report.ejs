@@ -41,7 +41,7 @@ function getLineData() {
 
   for(var i=0; i < test; i++) {
     data.push({
-        label: monthNames["<%= results2.results2["+i+"].buy_at %>"],
+        label: monthNames[`<%= results2.results2[${i}].buy_at %>`],
         backgroundColor: 'rgb(255, 102, 178)',
         borderColor: 'rgb(255, 102, 178)',
         data: [5],
