@@ -93,15 +93,14 @@ var chart = new Chart(ctx, {
             total = total + parseInt("<%= r.count %>") ;
             </script>
     <% }); %>   
-        <tr>
-        <td id="total"></td>
-        </tr>
+        
 
     </tbody>
 
 </table>
 </div>
-
+    <div id ="total" style=""> </div>
+</div>
 <script>
         document.getElementById("total").innerHTML = "Total :" + total;
 </script>
