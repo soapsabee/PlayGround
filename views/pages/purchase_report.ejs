@@ -60,7 +60,7 @@ function getRandomColor() {
 }
 </script>
 
-<div class="container" style="margin:100px;">
+<div class="container" style="margin-top:100px; margin-bottom:100px;">
 <h2>รายการยอดขายสินค้าในปี 2018</h2>
 <div class="table-wrapper-scroll-y" style="display: block;max-height: 200px;overflow-y: auto;-ms-overflow-style: -ms-autohiding-scrollbar;">
 <table class="table">
@@ -72,6 +72,9 @@ function getRandomColor() {
             <th>Sale</th>
         </tr>
     </thead>
+    <script>
+     var total = 0;
+    </script>
     <tbody>
     <% results.results.forEach(function(r) { %>
         <tr>
@@ -81,7 +84,9 @@ function getRandomColor() {
             <td><%= r.sale%>  Bath </td>         
         
         </tr>
-        
+        <script>
+            total = total + parseInt("<%= r.sale %>") ;
+            </script>
         <% }); %>   
         <tr>Total:</tr>
     
@@ -91,7 +96,9 @@ function getRandomColor() {
 
 </table>
 </div>
-
+<div id ="total" style=""> </div>
 </div>
-
+<script>
+        document.getElementById("total").innerHTML = "Total :" + total;
+</script>
 <% include ../partials/footer.ejs %>
