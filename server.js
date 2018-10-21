@@ -102,7 +102,7 @@ try {
       const client = await pool.connect()
       const result = await client.query(`UPDATE product_table SET id = ${pid},title = '${title}',price = ${price},tag='${tag}',create_at = '${date}' where id = ${pid}`);
       //const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/save');
+      res.render('pages/complete_add_pd');
       client.end();
     } catch (err) {
       console.error(err);
