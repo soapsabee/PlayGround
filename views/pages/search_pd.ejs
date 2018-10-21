@@ -3,7 +3,7 @@
 
 
 <div class="container">
-<h2>Database Results</h2>
+<h2>ข้อมูลรายการสินค้า</h2>
 <table class="table">
     <thead>
         <tr>
@@ -11,7 +11,7 @@
             <th>Title</th>
             <th>Price</th>
             <th>Date</th>
-            <th><a name="" id="" class="btn btn-secondary" href="insert_pd" role="button">Add New</a></th>
+            <th><a name="" id="" class="btn btn-warning" href="insert_pd" role="button">Add New</a></th>
         </tr>
     </thead>
     <tbody>
@@ -20,8 +20,9 @@
             <td><%= r.id %></td>
             <td><%= r.title %></td>
             <td><%= r.price %></td>
+            <td><%= r.tag %></td>
             <td><%= r.create_at %></td>   
-            <td><a name="" id="" class="btn btn-primary" href="/db/<%= r.id %>" role="button">Edit</a></td>
+            <td><a name="" id="" class="btn btn-info" href="/db/<%= r.id %>" role="button">Edit</a></td>
             
         </tr>
     <% }); %>    
