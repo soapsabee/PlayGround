@@ -7,8 +7,7 @@
 
 <script>
 var i;
-var test = <%= results2.results2.length %>;
-console.log(test);
+var results_sale = <%= results2.results2.length %>;
 var monthNames = ["","January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
 var ctx = document.getElementById('myChart').getContext('2d');
 ctx.canvas.height = 100;
@@ -39,7 +38,7 @@ var chart = new Chart(ctx, {
 function getLineData() {
   var data = []
   //for(var i=0; i < test; i++) {
-   <% for(var ei =0; ei <2; ei++){ %>
+   <% for(var ei =0; ei <results_sale; ei++){ %>
     data.push({
         label: monthNames[<%= results2.results2[ei].buy_at %>],
         backgroundColor: getRandomColor(),
@@ -72,11 +71,12 @@ function getRandomColor() {
         </tr>
     </thead>
     <tbody>
-  
+    <% results.forEach(function(r) { %>
         <tr>
-            <td><%= results%></td>
-            <td><%= results2.results2[0].sale %></td>   
-                   
+            <td><%= r.results.id%></td>
+            <td><%= r.results.tag %></td>
+            <td><%= r.results.buy_at%> </td>   
+            <td><%= r.results.sale%> </td>         
         
         </tr>
         
