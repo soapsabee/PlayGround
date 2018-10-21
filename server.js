@@ -78,7 +78,7 @@ app.get('/product_list', async (req, res) => {
     var text = req.query.search;
      try {
       const client = await pool.connect()
-      const result = await client.query(`SELECT * FROM product_table where cast(id as text) LIKE '${text}' or title LIKE '%${text}%' or create_at LIKE '%${text}%'`);
+      const result = await client.query(`SELECT * FROM product_table where cast(id as text) LIKE '%${text}%' or title LIKE '%${text}%' or create_at LIKE '%${text}%'`);
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/search_pd', results );
       client.release();
