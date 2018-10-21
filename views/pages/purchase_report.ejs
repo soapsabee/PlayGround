@@ -73,12 +73,12 @@ function getRandomColor() {
         </tr>
     </thead>
     <tbody>
-    <% results.forEach(function(r) { %>
+    <% results.results.forEach(function(r) { %>
         <tr>
-            <td><%= r.results.id%></td>
-            <td><%= r.results.tag %></td>
-            <td><%= r.results.buy_at%> </td>   
-            <td><%= r.results.sale%> </td>         
+            <td><%= r.id%></td>
+            <td><%= r.tag %></td>
+            <td><%= r.buy_at%> </td>   
+            <td><%= r.sale%> </td>         
         
         </tr>
         
