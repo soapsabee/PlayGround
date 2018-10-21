@@ -16,12 +16,12 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 
 app.get('/', (req, res) => res.render('pages/index'));
-app.get('/db', async (req, res) => {
+app.get('/product_list', async (req, res) => {
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM product_table ORDER BY id ASC');
       const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/db', results );
+      res.render('pages/product_list', results );
       client.end();
     } catch (err) {
       console.error(err);
@@ -31,7 +31,7 @@ app.get('/db', async (req, res) => {
   
 
 
-  app.get('/db/:id',  async (req, res) => {
+  app.get('/product_list/:id',  async (req, res) => {
     var pid = req.params.id;
      try {
       const client = await pool.connect()
@@ -89,7 +89,7 @@ app.get('/db', async (req, res) => {
   })
 
 
-  app.post('/db/save',  async (req, res) => {
+  app.post('/product_list/save',  async (req, res) => {
     var pid = req.body.id;
     
     var title = req.body.title;
@@ -172,7 +172,7 @@ app.post('/complete_add_user', async (req, res) =>{
 })
 
 
-app.get('/db/complete_del/:id', async (req, res) =>{
+app.get('/product_list/complete_del/:id', async (req, res) =>{
   var pid = req.params.id;
 
   try {
