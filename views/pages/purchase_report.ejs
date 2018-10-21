@@ -88,7 +88,6 @@ function getRandomColor() {
             total = total + parseInt("<%= r.sale %>") ;
             </script>
         <% }); %>   
-        <tr>Total:</tr>
     
         
 
@@ -96,7 +95,7 @@ function getRandomColor() {
 
 </table>
 </div>
-<div id ="total" style=""> </div>
+<div id ="total" style="color:red; font-size: 50px;"> </div>
 </div>
 <script>
         document.getElementById("total").innerHTML = "Total :" + total;
