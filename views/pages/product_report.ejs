@@ -70,11 +70,31 @@ function getRandomColor() {
             <th>Total</th>
         </tr>
     </thead>
-    
+    <tbody>
+    <script>
+     var total = 0;
+    </script>
+    <% results.forEach(function(r) { %>
+        <tr>
+            <td><%= r.tag %></td>
+            <td><%= r.count %></td>   
+                   
+        
+        </tr>
+        
+        <script>
+            total = total + parseInt("<%= r.count %>") ;
+            </script>
+    <% }); %>   
+        
+
+    </tbody>
 
 </table>
 </div>
     <div id ="total" style="color:red;font-size: 20px;"> </div>
 </div>
-
+<script>
+        document.getElementById("total").innerHTML = "Total :" + total;
+</script>
 <% include ../partials/footer.ejs %>
