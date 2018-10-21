@@ -6,7 +6,8 @@
 <canvas id="myChart"></canvas>
 
 <script>
-var test = <%= results2 %>;
+var test = <%= results2.length %>;
+console.log(test);
 var monthNames = ["","January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
 var ctx = document.getElementById('myChart').getContext('2d');
 ctx.canvas.height = 100;
@@ -19,7 +20,7 @@ var chart = new Chart(ctx, {
         labels: ["Storage is now"],
         datasets: [
             //ใช้ loop ของ javascript แทน นอนก่อน
-            for (var int i=0;i<test.length;i++){
+            /*  for (var int i=0;i<test.length;i++){
         
             {   
             label: monthNames[<%= r.results2[i].buy_at %>],
@@ -28,7 +29,7 @@ var chart = new Chart(ctx, {
             data: ["<%= r.results2[i].sale %>"],
             
         },
-            }
+            }*/
             
     }]
     },
