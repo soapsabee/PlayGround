@@ -22,7 +22,7 @@ app.get('/product_list', async (req, res) => {
       const result = await client.query('SELECT * FROM product_table ORDER BY id ASC');
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/product_list', results );
-      client.end();
+      client.release();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
@@ -38,7 +38,7 @@ app.get('/product_list', async (req, res) => {
       const result = await client.query(`SELECT * FROM product_table where id = ${pid}`);
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/edit_pd', results );
-      client.end();
+      client.release();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
@@ -51,7 +51,7 @@ app.get('/product_list', async (req, res) => {
       const result = await client.query('SELECT * FROM users ORDER BY id ASC');
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/users_list', results );
-      client.end();
+      client.release();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
@@ -65,7 +65,7 @@ app.get('/product_list', async (req, res) => {
       const result = await client.query(`SELECT * FROM users where id = ${pid}`);
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/edit_user', results );
-      client.end();
+      client.release();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
@@ -81,7 +81,7 @@ app.get('/product_list', async (req, res) => {
       const result = await client.query(`SELECT * FROM product_table where id = ${text} or title LIKE '%${text}%' or create_at LIKE '%${text}%'`);
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/search_pd', results );
-      client.end();
+      client.release();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
@@ -103,7 +103,7 @@ try {
       const result = await client.query(`UPDATE product_table SET id = ${pid},title = '${title}',price = ${price},tag='${tag}',create_at = '${date}' where id = ${pid}`);
       //const results = { 'results': (result) ? result.rows : null};
       res.render('pages/complete_add_pd');
-      client.end();
+      client.release();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
@@ -121,9 +121,8 @@ try {
 try {
       const client = await pool.connect()
       const result = await client.query(`UPDATE users SET email = '${email}',password = ${password},create_at = '${date}' where id = ${pid}`);
-      //const results = { 'results': (result) ? result.rows : null};
       res.render('pages/save');
-      client.end();
+      client.release();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
@@ -145,7 +144,7 @@ app.post('/complete_add_pd', async (req, res) =>{
     const result = await client.query(`insert into product_table(title,price,create_at,tag) values ('${title}','${price}','${datenow}','${tag}')`);
     res.render('pages/complete_add_pd');
     console.log("OK");
-    client.end();
+    client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
@@ -164,7 +163,7 @@ app.post('/complete_add_user', async (req, res) =>{
     const result = await client.query(`insert into users(email,password,create_at) values ('${email}','${password}','${datenow}')`);
     res.render('pages/complete_add_user');
     console.log("OK");
-    client.end();
+    client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
@@ -180,7 +179,7 @@ app.get('/product_list/complete_del_pd/:id', async (req, res) =>{
     const result = await client.query(`delete from product_table values where id = ${pid}`);
     res.render('pages/complete_del_pd');
     console.log("OK");
-    client.end();
+    client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
@@ -195,7 +194,7 @@ app.get('/users_list/complete_del_user/:id', async (req, res) =>{
     const result = await client.query(`delete from users values where id = ${pid}`);
     res.render('pages/complete_del_user');
     console.log("OK");
-    client.end();
+    client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
@@ -205,7 +204,6 @@ app.get('/users_list/complete_del_user/:id', async (req, res) =>{
   
 app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
 app.get('/insert_user',(req,res) => res.render('pages/insert_user'));
-//app.get('/edit_pd',(req,res) => res.render('pages/edit_pd'));
 
 
 
@@ -216,8 +214,7 @@ app.get('/product_report',  async (req, res) => {
     const result = await client.query(`select tag,count(*) from product_table group by tag`);
     const results = { 'results': (result) ? result.rows : null};
     res.render('pages/product_report', results );
-   // res.send({results});
-    client.end();
+    client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
@@ -235,22 +232,12 @@ app.get('/purchase_report',  async (req, res) => {
      const results2 = { 'results2': (result2) ? result2.rows : null};
     res.render("pages/purchase_report",{results2,results});
     //res.send({results2,results});
-    client.end();
+    client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
   }
 
-  /*try {
-    const client = await pool.connect()
-    const result2 = await client.query(`select sum(sale) from purchase group by to_char(buy_at,'MM');`);
-    results2 = { 'results2': (result2) ? result2.rows : null};
-    client.end();
-  } catch (err) {
-    console.error(err);
-    res.send("Error " + err);
-  }*/
- 
 })
 
 
