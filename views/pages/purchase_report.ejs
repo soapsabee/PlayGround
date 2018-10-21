@@ -42,7 +42,7 @@ function getLineData() {
    <% for(var ei =0; ei <2; ei++){ %>
     data.push({
         label: monthNames[<%= results2.results2[ei].buy_at %>],
-        backgroundColor: 'rgb(255, 102, 178)',
+        backgroundColor: getRandomColor(),
         borderColor: 'rgb(255, 102, 178)',
         data: [5],
         
@@ -51,8 +51,16 @@ function getLineData() {
  <% } %>
 
   return data
+  
 }
-
+function getRandomColor() {
+      var letters = '0123456789ABCDEF'.split('');
+      var color = '#';
+      for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 </script>
 
 <div class="container">
