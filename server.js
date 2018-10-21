@@ -216,7 +216,7 @@ app.get('/product_report',  async (req, res) => {
     res.render('pages/product_report', results );
     client.end();
   } catch (err) {
-    console.error(err);
+    console.release(err);
     res.send("Error " + err);
   }
 })
