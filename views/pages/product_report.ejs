@@ -38,7 +38,7 @@ function getLineData() {
   //for(var i=0; i < test; i++) {
    <% for(var ei =0; ei <results.length; ei++){ %>
     data.push({
-        label: <%= results[ei].tag %>,
+        label: "<%= results[ei].tag %>",
         backgroundColor: getRandomColor(),
         data: [<%= results[ei].count %>],
         
