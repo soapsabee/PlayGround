@@ -121,7 +121,7 @@ try {
 try {
       const client = await pool.connect()
       const result = await client.query(`UPDATE users SET email = '${email}',password = ${password},create_at = '${date}' where id = ${pid}`);
-      res.render('pages/save');
+      res.render('pages/complete_add_user');
       client.release();
     } catch (err) {
       console.error(err);
