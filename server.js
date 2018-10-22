@@ -91,7 +91,6 @@ app.get('/product_list', async (req, res) => {
 
   app.post('/product_list/save',  async (req, res) => {
     var pid = req.body.id;
-    
     var title = req.body.title;
     var price = req.body.price;
     var tag = req.body.tag_product;
@@ -101,7 +100,6 @@ app.get('/product_list', async (req, res) => {
 try {
       const client = await pool.connect()
       const result = await client.query(`UPDATE product_table SET id = ${pid},title = '${title}',price = ${price},tag='${tag}',create_at = '${date}' where id = ${pid}`);
-      //const results = { 'results': (result) ? result.rows : null};
       res.render('pages/complete_add_pd');
       client.release();
     } catch (err) {
@@ -201,12 +199,6 @@ app.get('/users_list/complete_del_user/:id', async (req, res) =>{
   }
 })
 
-  
-app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
-app.get('/insert_user',(req,res) => res.render('pages/insert_user'));
-
-
-
 app.get('/product_report',  async (req, res) => {
   
    try {
@@ -239,6 +231,10 @@ app.get('/purchase_report',  async (req, res) => {
   }
 
 })
+
+  
+app.get('/insert_pd',(req,res) => res.render('pages/insert_pd'));
+app.get('/insert_user',(req,res) => res.render('pages/insert_user'));
 
 
 app.listen(process.env.PORT || 8000);
