@@ -10,17 +10,17 @@
 var ctx = document.getElementById('myChart').getContext('2d');
 ctx.canvas.height = 100;
 var chart = new Chart(ctx, {
-    // The type of chart we want to create
+    
     type: 'bar',
 
-    // The data for our dataset
+    
     data: {
         labels: ["คลังสินค้า ณ ปัจจุบัน"],
         datasets: getLineData(),
            
     },
    
-    // Configuration options go here
+    
     options: { 
     responsive: true,
     maintainAspectRatio: true,
@@ -35,7 +35,6 @@ var chart = new Chart(ctx, {
 
 function getLineData() {
   var data = []
-  //for(var i=0; i < test; i++) {
    <% for(var ei =0; ei <results.length; ei++){ %>
     data.push({
         label: "<%= results[ei].tag %>",

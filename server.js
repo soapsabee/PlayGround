@@ -223,7 +223,6 @@ app.get('/purchase_report',  async (req, res) => {
      const results = { 'results': (result) ? result.rows : null};
      const results2 = { 'results2': (result2) ? result2.rows : null};
     res.render("pages/purchase_report",{results2,results});
-    //res.send({results2,results});
     client.release();
   } catch (err) {
     console.error(err);

@@ -36,7 +36,6 @@ var chart = new Chart(ctx, {
 
 function getLineData() {
   var data = []
-  //for(var i=0; i < test; i++) {
    <% for(var ei =0; ei <results2.results2.length; ei++){ %>
     data.push({
         label: monthNames[<%= results2.results2[ei].buy_at %>],
