@@ -1,0 +1,77 @@
+<% include ../partials/header.ejs %>
+
+
+<div class="container">
+        <% posts.forEach(function(r) { %>
+    <div class="row">
+            <div class="col-12"style="border:solid; color:red; width: 100%; height: 200px;">
+                <div class="row">
+                        <div class="col-2" style="border:solid; color:red; width: 200px; height: 200px;">
+                            
+                        
+                        </div>
+                        
+                       <div class="col-10" style="border:solid; color:red; width: 200px; height: 200px;">
+                        <div class="row">
+                            <div class="col-12" style="border:solid; color:red; width: 200px; height: 50px;"><%= r.app %></div>
+                        </div>
+                        <div class="row">
+                                <div class="col-6" style="border:solid; color:red; width: 200px; height: 140px;">
+                                หมวดหมู่: <%= r.genres %>
+                                <br>
+                                ประเภท: <%= r.type %>
+                                <br>  
+                                ราคา: <%= r.price %>
+                                <br>
+                                ระดับ: <%= r.rating %> 
+                                </div>
+
+                                <div class="col-6" style="border:solid; color:red; width: 200px; height: 140px;">
+                                        รีวิว: <%= r.reviews %>
+                                        <br>
+                                        จำนวนดาวน์โหลด: <%= r.installs %>
+                                        <br>  
+                                        เวอร์ชั่นปัจจุบัน: <%= r.curver %>
+                                        <br>
+                                        เอนดรอยด์เวอร์ชั่น: <%= r.androidver %> 
+                                        <br>
+                                        อัพเดทล่าสุด: <%= r.lastupdate %> 
+                                        </div>
+                            </div>
+                    </div>
+                            
+                </div>  
+                 
+            </div>      
+        </div>
+        <% }); %>    
+        <div class="row">
+                <div class="col-12"style="border:solid; color:red; width: 100%; height: 200px;">
+                    <div class="row">
+                            <div class="col-2" style="border:solid; color:red; width: 200px; height: 200px;">
+                                
+                            
+                            </div>
+                            
+                           <div class="col-10" style="border:solid; color:red; width: 200px; height: 200px;">
+                            <div class="row">
+                                <div class="col-12" style="border:solid; color:red; width: 200px; height: 50px;"></div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-12" style="border:solid; color:red; width: 200px; height: 140px;"></div>
+                                </div>
+                        </div>
+                                
+                    </div>  
+                     
+                </div>      
+            </div>
+    
+
+        
+
+
+</div>
+
+
+<% include ../partials/footer.ejs %>
