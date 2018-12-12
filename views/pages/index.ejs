@@ -4,87 +4,164 @@
 <div class="container">
   <div class="title" style="margin-top:50px;">
   <h1>แอพยอดนิยม</h1>
-  <div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='show_apps'"><h2>เพิ่มเติม >></h2></button></div>
 </div>
-  <div style="border:solid; color:red; margin-top:50px; width: 100%; height: 600px;">
+<div class="row">
+
+  <div class="col-lg-3">
+
+    <h1 class="my-4">Shop Name</h1>
+    <div class="list-group">
+      <a href="#" class="list-group-item">Category 1</a>
+      <a href="#" class="list-group-item">Category 2</a>
+      <a href="#" class="list-group-item">Category 3</a>
+    </div>
+
+  </div>
+  <!-- /.col-lg-3 -->
+
+  <div class="col-lg-9">
+
+    <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+<div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='show_apps'">
+    <h2>เพิ่มเติม >></h2>
+  </button></div>
+  
     <div class="row">
-    <div style="border:solid; color:yellow; width: 100%; height:  500px;" class="col-4">
-        <div class="col-12" style="border:solid; margin-top:10px; color:red; width: 100%; height: 400px;"></div>
-        <div class="col-12" style="text-align:center; margin-top:10px;"> <p><%= posts[0].app %></p></div>
-          <div class="col-12" style="text-align:center; margin-top:10px;"> FREE</div>
-          <div class="col-12" style="text-align:center; margin-top:10px;"> ดาวน์โหลด</div>
-      </div>
-    <div style="border:solid; color:blue; width: 100%; height:  600px;" class="col-8">
-      <div class="row">
-        <div style="border:solid; color:red; width: 100%; height:  300px;" class="col-3">
-          <div class="col-12" style="border:solid; margin-top:10px; color:red; width: 100%; height: 150px;"></div>
-          <div class="col-12" style="text-align:center; margin-top:10px;"> <p><%= posts[1].app %></p></div>
-          <div class="col-12" style="text-align:center; margin-top:10px;"> FREE</div>
-          <div class="col-12" style="text-align:center; margin-top:10px;"> ดาวน์โหลด</div>
-        </div>
-        <div style="border:solid; color:red; width: 100%; height:  300px;" class="col-3">
-            <div class="col-12" style="border:solid; margin-top:10px; color:red; width: 100%; height: 150px;"></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> <p><%= posts[2].app %></p></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> FREE</h6></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> ดาวน์โหลด</h6></div>
-        </div>
-        <div style="border:solid; color:red; width: 100%; height:  300px;" class="col-3">
-            <div class="col-12" style="border:solid; margin-top:10px; color:red; width: 100%; height: 150px;"></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> <p><%= posts[3].app %></p></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> FREE</h6></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> ดาวน์โหลด</p></div>
-        </div>
-        <div style="border:solid; color:red; width: 100%; height:  300px;" class="col-3">
-            <div class="col-12" style="border:solid; margin-top:10px; color:red; width: 100%; height: 150px;"></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> <p><%= posts[4].app %></h6></p></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> FREE</div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> ดาวน์โหลด</div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= posts[0].app %></a>
+            </h4>
+            <h5><%= posts[0].price %></h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div style="border:solid; color:red; width: 100%; height:  300px;" class="col-3">
-            <div class="col-12" style="border:solid; margin-top:10px; color:red; width: 100%; height: 150px;"></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> <p><%= posts[5].app %></p></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> FREE</div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> ดาวน์โหลด</div>
-        </div>
-        <div style="border:solid; color:red; width: 100%; height:  300px;" class="col-3">
-            <div class="col-12" style="border:solid; margin-top:10px; color:red; width: 100%; height: 150px;"></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> <p><%= posts[6].app %></p></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> FREE</div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> ดาวน์โหลด</div>
-        </div>
-        <div style="border:solid; color:red; width: 100%; height:  300px;" class="col-3">
-            <div class="col-12" style="border:solid; margin-top:10px; color:red; width: 100%; height: 150px;"></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> <p><%= posts[7].app %></p></div>
-            <div class="col-12" style="text-align:center; margin-top:5px;"> FREE</div>
-            <div class="col-12" style="text-align:center; margin-top:5px;"> ดาวน์โหลด</div>
-        </div>
-        <div style="border:solid; color:red; width: 100%; height:  300px;" class="col-3">
-            <div class="col-12" style="border:solid; margin-top:10px; color:red; width: 100%; height: 150px;"></div>
-            <div class="col-12" style="text-align:center; margin-top:10px;"> <p><%= posts[8].app %></p></div>
-            <div class="col-12" style="text-align:center; margin-top:5px;"> FREE</div>
-            <div class="col-12" style="text-align:center; margin-top:5px;"> ดาวน์โหลด</div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= posts[1].app %></a>
+            </h4>
+            <h5><%= posts[1].price %></h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+              Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          </div>
         </div>
       </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= posts[2].app %></a>
+            </h4>
+            <h5><%= posts[2].price %></h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= posts[3].app %></a>
+            </h4>
+            <h5><%= posts[3].price %></h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= posts[4].app %></a>
+            </h4>
+            <h5><%= posts[4].price %></h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+              Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= posts[5].app %></a>
+            </h4>
+            <h5><%= posts[5].price %></h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          </div>
+        </div>
+      </div>
+
     </div>
-    </div>
-    </div>
+  
+
+  </div>
+
+
+</div>
+  
   </div>
 </div>
 
 
-<style type="text/css">
 
-  p{
-   font-size:1em;
-   line-height:1em;
-   height:3em;
-   white-space: wrap;
- 	
-  overflow: hidden;	
-  text-overflow: ellipsis;
-  
-  }
-    </style>
 <% include ../partials/footer.ejs %>
