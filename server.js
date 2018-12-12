@@ -50,6 +50,27 @@ app.get('/show_apps',(req, res) =>{
 })
 
 
+app.get('/review_app/:app',(req, res) =>{
+ var apps = req.params.app;
+  axios.get(`http://localhost:8080/api/findreviews/?app=${apps}`)
+  .then(function (response) {
+    let product = [];
+    response.data.map((posts)=>{
+
+      product.push(posts);
+      
+    })
+    
+    res.render('pages/review_app', {posts : product});
+   
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  
+})
+
 });
 
 
