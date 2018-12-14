@@ -1,79 +1,58 @@
 <% include ../partials/header.ejs %>
 
-
 <div class="container">
+     <div class="row">
+    <div class="col-lg-3">
+      <h1 class="my-4">Shop Name</h1>
+      <div class="list-group">
+        <a href="#" class="list-group-item">Category 1</a>
+        <a href="#" class="list-group-item">Category 2</a>
+        <a href="#" class="list-group-item">Category 3</a>
+      </div>
+    </div> 
+     
+
+    <div class="loadMore row">
+
         <% posts.forEach(function(r) { %>
-    <div class="row">
-            <div class="col-12"style="border:solid; color:red; width: 100%; height: 200px;">
-                <div class="row">
-                        <div class="col-2" style="border:solid; color:red; width: 200px; height: 200px;">
-                            
-                        
-                        </div>
-                        
-                       <div class="col-10" style="border:solid; color:red; width: 200px; height: 200px;">
-                        <div class="row">
-                            <div class="col-12" style="border:solid; color:red; width: 200px; height: 50px;"><%= r.app %></div>
-                        </div>
-                        <div class="row">
-                                <div class="col-6" style="border:solid; color:red; width: 200px; height: 140px;">
-                                หมวดหมู่: <%= r.genres %>
-                                <br>
-                                ประเภท: <%= r.type %>
-                                <br>  
-                                ราคา: <%= r.price %>
-                                <br>
-                                ระดับ: <%= r.rating %> 
-                                </div>
-
-                                <div class="col-6" style="border:solid; color:red; width: 200px; height: 140px;">
-                                        รีวิว: <%= r.reviews %>
-                                        <br>
-                                        จำนวนดาวน์โหลด: <%= r.installs %>
-                                        <br>  
-                                        เวอร์ชั่นปัจจุบัน: <%= r.curver %>
-                                        <br>
-                                        เอนดรอยด์เวอร์ชั่น: <%= r.androidver %> 
-                                        <br>
-                                        อัพเดทล่าสุด: <%= r.lastupdate %> 
-                                        <br>
-                                        <a name="" id="" class="btn btn-info" href="/review_app/<%= r.app %>" role="button">See</a>
-                                        </div>
-                            </div>
-                    </div>
-                            
-                </div>  
-                 
-            </div>      
-        </div>
-        <% }); %>    
-        <div class="row">
-                <div class="col-12"style="border:solid; color:red; width: 100%; height: 200px;">
-                    <div class="row">
-                            <div class="col-2" style="border:solid; color:red; width: 200px; height: 200px;">
-                                
-                            
-                            </div>
-                            
-                           <div class="col-10" style="border:solid; color:red; width: 200px; height: 200px;">
-                            <div class="row">
-                                <div class="col-12" style="border:solid; color:red; width: 200px; height: 50px;"></div>
-                            </div>
-                            <div class="row">
-                                    <div class="col-12" style="border:solid; color:red; width: 200px; height: 140px;"></div>
-                                </div>
-                        </div>
-                                
-                    </div>  
-                     
-                </div>      
+        <div class="item col-lg-4 col-md-6 mb-4">
+        <div class="item card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
+            <div class="item card-body">
+                <h4 class="card-title"><a href="#">
+                        <%= r.app %> </a></h4>
+                <h5>
+                    <%= r.price %>
+                </h5>
+                <p class="card-text">หมวดหมู่:
+                    <%= r.genres %>
+                </p>
             </div>
-    
+            <div class="item card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+        </div>
+        </div>
 
-        
+        <% }); %>
+
+    </div>
 
 
 </div>
 
 
+<script>
+    $(document).ready(function () {
+        $('.loadMore').loadMoreResults({
+            displayedItems: 6,
+            showItems: 6,
+            tag: {
+                'name': 'div',
+                'class': 'col-lg-4 col-md-6 mb-4'
+            }
+        });
+    })
+
+</script>
 <% include ../partials/footer.ejs %>

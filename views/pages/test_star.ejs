@@ -1,0 +1,96 @@
+<% include ../partials/header.ejs %>
+<table>
+        <thead>
+          <tr>
+            <th>Hotel</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+                <% var i = 0; %>
+                <% posts.forEach(function(r) { var posts = "posts"+i; %>
+                
+          <tr class="<%= posts %>"> 
+            <td><%= r.app %></td>
+            <td>
+              <div class="stars-outer">
+                <div class="stars-inner"></div>
+              </div>
+            </td>
+          </tr>
+             <% i = i+1; %>
+        <% }); %>
+        </tbody>
+      </table>
+      
+      <a class="attribution" href="http://fontawesome.io/"><i class="fa fa-font-awesome"></i> fontawesome.io</a>
+
+      <style>
+      .stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
+}
+
+.attribution {
+  font-size: 12px;
+  color: #444;
+  text-decoration: none;
+  text-align: center;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: -1;
+}
+.attribution:hover {
+  color: #1fa67a;
+}
+      
+      </style>
+
+
+
+
+<script>
+var key = 'posts';
+var posts = <%- JSON.stringify(posts); %>;
+var num = posts.length;
+const ratings = {};
+
+for (var j = 0 ; j< num; j++){
+
+    
+  ratings[j] = {[key+j]: posts[j].rating};
+
+}
+
+// total number of stars
+const starTotal = 5;
+
+for(const rating in ratings) {  
+    
+  const starPercentage = (parseInt(Object.values(ratings[rating])) / starTotal) * 100;
+  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+  document.querySelector(`.${Object.keys(ratings[rating]).toString()} .stars-inner`).style.width = starPercentageRounded; 
+}
+
+</script>
+      <% include ../partials/footer.ejs %>

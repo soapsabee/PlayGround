@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 
 app.get('/', (req, res) => {
-
+ 
   axios.get('http://localhost:8080/api/alldetails')
   .then(function (response) {
     let product = [];
@@ -28,11 +28,31 @@ app.get('/', (req, res) => {
     // handle error
     console.log(error);
   })
+});
   
   
-app.get('/show_apps',(req, res) =>{
+app.get('/show_apps/:category',(req, res) =>{
+  var category = req.params.category;
+  axios.get(`http://localhost:8080/api/find_AppByCategory/?category=${category}`)
+  .then(function (response) {
+    let product = [];
+    response.data.map((posts)=>{
+
+      product.push(posts);
+    })
+    res.render('pages/show_apps', {posts : product});
+   
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  
+})
+
+app.get('/appnews',(req, res) =>{
  
-  axios.get('http://localhost:8080/api/alldetails')
+  axios.get(`http://localhost:8080/api/find_AppByNews`)
   .then(function (response) {
     let product = [];
     response.data.map((posts)=>{
@@ -71,7 +91,25 @@ app.get('/review_app/:app',(req, res) =>{
   
 })
 
-});
+app.get('/test_star',(req, res) => {
+
+
+
+axios.get('http://localhost:8080/api/alldetails')
+.then(function (response) {
+  let product = [];
+  response.data.map((posts)=>{
+
+    product.push(posts);
+  })
+  res.render('pages/test_star', {posts : product});
+ 
+})
+.catch(function (error) {
+  // handle error
+  console.log(error);
+ })
+})
 
 
 
