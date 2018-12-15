@@ -37,6 +37,25 @@ app.get('/', (req, res) => {
 
     })
 
+    app.get('/appby_name', (req, res) => {
+      var name = req.query.name;
+      axios.get(`http://localhost:8080/api/find_AppByName/?name=${name}`)
+        .then(function (response) {
+          let product = [];
+          response.data.map((posts) => {
+    
+            product.push(posts);
+          })
+          res.render('pages/show_apps', { posts: product });
+    
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+    
+    })
+
 
 app.get('/show_apps/:category', (req, res) => {
   var category = req.params.category;
@@ -77,6 +96,69 @@ app.get('/appnews', (req, res) => {
 })
 
 
+
+app.get('/appMostlyInst', (req, res) => {
+
+  axios.get(`http://localhost:8080/api/find_AppByInstall/?installs=5,000,000`)
+    .then(function (response) {
+      let product = [];
+      response.data.map((posts) => {
+
+        product.push(posts);
+      })
+      res.render('pages/show_apps', { posts: product });
+
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+
+})
+
+app.get('/appby_type/:type', (req, res) => {
+  var type = req.params.type;
+  axios.get(`http://localhost:8080/api/find_AppByType/?type=${type}`)
+    .then(function (response) {
+      let product = [];
+      response.data.map((posts) => {
+
+        product.push(posts);
+
+      })
+
+      res.render('pages/show_apps', { posts: product });
+
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+
+})
+
+
+app.get('/appby_rate', (req, res) => {
+  var rate = req.query.rate;
+  axios.get(`http://localhost:8080/api/find_AppByRate/?rating=${rate}`)
+    .then(function (response) {
+      let product = [];
+      response.data.map((posts) => {
+
+        product.push(posts);
+
+      })
+
+      res.render('pages/show_apps', { posts: product });
+
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+
+})
+
 app.get('/review_app/:app', (req, res) => {
   var apps = req.params.app;
   axios.get(`http://localhost:8080/api/findreviews/?app=${apps}`)
@@ -95,6 +177,35 @@ app.get('/review_app/:app', (req, res) => {
       // handle error
       console.log(error);
     })
+
+})
+
+app.get('/api/find_AppByPrice/:price1/:price2', (req, res) => {
+  var price1 = req.params.price1;
+  var price2 = req.params.price2;
+
+  axios.get(`http://localhost:8080/api/find_AppByPrice/?price1=${price1}&price2=${price2}`)
+    .then(function (response) {
+      let product = [];
+      response.data.map((posts) => {
+
+        product.push(posts);
+
+      })
+
+      res.render('pages/show_apps', { posts: product });
+
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+
+})
+
+app.get('/detail_app', (req, res) => {
+
+  res.render('pages/detail_app');
 
 })
 

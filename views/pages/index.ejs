@@ -4,10 +4,10 @@
   <div class="headback" style="border:solid; color:whitesmoke; height:600px;background-image:url(./pic/pixel-art-mountains-waterfall-trees-planet-centauri-1380079-wallhere.com.jpg); background-repeat: no-repeat;  background-size: cover;">
     <div class="row" style="margin-top:60px;">
   <div class="col-12"style=" text-align: center;"> 
-    <label for="email" style="font-family:pixel; color:black; font-size: 100px;">Play Store</label>
-    <form action="/">
+    <label for="text" style="font-family:pixel; color:black; font-size: 100px;">Play Store</label>
+    <form action="/appby_name" method="GET">
       <div style="margin-left:400px;" >
-        <input type="email" class="form-control" style="width:500px;" id="email"><button type="submit" style="color:black;" class="btn btn-default">ค้นหา</button>
+        <input type="text" class="form-control" style="width:500px;" name="name" id="name"><button type="submit" style="color:black;" class="btn btn-default">ค้นหา</button>
       </div>
       
     </form>
@@ -42,7 +42,24 @@
     <div class="list-group">
       <div class="new"style="color:black;"><a href="/appnews">แอปยอดนิยม</a></div>
       <div class="new"style="color:black;"><a href="/appnews">ยอดดาวน์โหลดสูงสุด</a></div>
-      <div class="new"style="color:black;"><a href="/appnews">แอปยอดนิยม</a></div>
+      <div class="new"style="color:black;"><a href="/appby_type/Free">FREE APPS</a></div>
+      <div class="new"style="color:black;"><a href="/appby_type/Paid">PAY APPS</a></div>
+      <form action="/appby_rate" method="GET">
+      <div class="new">
+        <select class="star" name="rate">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button>ค้น</button>
+    </div>
+    </form>
+   
+    <input type="text" class="js-range-slider" name="my_range" value=""/>
+<button id="test-btn">ค้น</button>
+
     </div>
 
   </div>
@@ -76,7 +93,7 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-<div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='show_apps'">
+<div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='/appMostlyInst'">
     <h2>เพิ่มเติม >></h2>
   </button></div>
   
@@ -93,13 +110,7 @@
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
           </div>
           <div class="card-footer">
-            <select class="star" >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+            
           </div>
         </div>
       </div>
@@ -116,13 +127,7 @@
               Lorem ipsum dolor sit amet.</p>
           </div>
           <div class="card-footer">
-            <select class="star" >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+            
           </div>
         </div>
       </div>
@@ -138,13 +143,7 @@
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
           </div>
           <div class="card-footer">
-            <select class="star" >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+           
           </div>
         </div>
       </div>
@@ -160,13 +159,7 @@
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
           </div>
           <div class="card-footer">
-            <select class="star" >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+           
           </div>
         </div>
       </div>
@@ -183,13 +176,7 @@
               Lorem ipsum dolor sit amet.</p>
           </div>
           <div class="card-footer">
-            <select class="star" sele>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+            
           </div>
         </div>
       </div>
@@ -216,7 +203,9 @@
         </div>
       </div>
    
-      มาใหม่
+      <div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='/appnews'">
+        <h2>เพิ่มเติม >></h2>
+      </button></div>
 
       <div class="row">
 
@@ -231,13 +220,7 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
             </div>
             <div class="card-footer">
-              <select class="star" >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+             
             </div>
           </div>
         </div>
@@ -254,13 +237,7 @@
                 Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="card-footer">
-              <select class="star" >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+             
             </div>
           </div>
         </div>
@@ -276,13 +253,7 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
             </div>
             <div class="card-footer">
-              <select class="star" >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              
             </div>
           </div>
         </div>
@@ -298,13 +269,7 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
             </div>
             <div class="card-footer">
-              <select class="star" >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              
             </div>
           </div>
         </div>
@@ -321,35 +286,12 @@
                 Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="card-footer">
-              <select class="star" sele>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              
             </div>
           </div>
         </div>
   
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#"></a>
-              </h4>
-              <h5></h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div class="card-footer">
-       
-             <div id="demo"class="demo"></div>
-             
-            
-                 </div>
-             </div>
-             </div>
+    
             </div>
           </div>
         </div>
@@ -362,13 +304,45 @@
 
 
 <script type="text/javascript">
+
+
+
+
    $(function() {
+
+    var from = 0;
+    var to = 0;
+
       $('.star').barrating({
         theme: 'fontawesome-stars',
-        readonly: true
+        readonly: false
 
       });
+
+      $(".js-range-slider").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 1000,
+        from: 200,
+        to: 500,
+        grid: true,
+        onFinish: function (data) {
+            // Called right after range slider instance initialised
+             from = data.from;
+             to = data.to;
+            console.log(from);          // MIN value
+            console.log(to);          // MAX values
+
+        },
+    });
+
+        
+        $( "#test-btn" ).click(function() {
+          window.location.href = `/api/find_AppByPrice/${from}/${to}`;
+          });
+
    });
+   
 </script>
 
 
