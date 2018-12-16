@@ -109,9 +109,37 @@
             <h5><%= posts[0].price %></h5>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
           </div>
-          <div class="card-footer">
-            
-          </div>
+          
+          
+          <select class="starnormal"  name="rate" >
+            <% if(posts[0].rating ===1 || posts[0].rating < 2  ) { %>
+            <option value="1" selected>1</option>
+            <% }else { %>
+            <option value="1"> >1</option>
+            <% }%>
+            <% if(posts[0].rating ===2 ||  posts[0].rating < 3 ) { %>
+            <option value="2" selected>2</option>
+            <% }else { %>
+            <option value="2">2</option>
+            <% }%>
+            <% if(posts[0].rating ===3 ||  posts[0].rating < 4){ %>
+            <option value="3" selected>3</option>
+            <% }else { %>
+            <option value="3">3</option>
+            <% }%>
+            <% if(posts[0].rating ===4 ||  posts[0].rating < 5){ %>
+            <option value="4" selected>4</option>
+            <% }else { %>
+            <option value="4">4</option>
+            <% }%>
+            <% if(posts[0].rating ===5){ %>
+            <option value="5" selected>5</option>
+            <% }else { %>
+            <option value="5">5</option>
+            <% }%>
+         
+          </select>
+        
         </div>
       </div>
 
@@ -126,8 +154,35 @@
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
               Lorem ipsum dolor sit amet.</p>
           </div>
-          <div class="card-footer">
-            
+          <div class="posts1">
+              <select class="starnormal" name="rate" >
+                  <% if(posts[0].rating ===1 || posts[0].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[0].rating ===2 ||  posts[0].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[0].rating ===3 ||  posts[0].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[0].rating ===4 ||  posts[0].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[0].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+               
+                </select>
           </div>
         </div>
       </div>
@@ -142,8 +197,35 @@
             <h5><%= posts[2].price %></h5>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
           </div>
-          <div class="card-footer">
-           
+          <div class="posts2">
+              <select class="starnormal" name="rate" >
+                  <% if(posts[2].rating ===1 || posts[2].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[2].rating ===2 ||  posts[2].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[2].rating ===3 ||  posts[2].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[2].rating ===4 ||  posts[2].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[2].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+               
+                </select>
           </div>
         </div>
       </div>
@@ -158,8 +240,35 @@
             <h5><%= posts[3].price %></h5>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
           </div>
-          <div class="card-footer">
-           
+          <div class="posts3">
+              <select class="starnormal" name="rate" >
+                  <% if(posts[0].rating ===1 || posts[0].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[0].rating ===2 ||  posts[0].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[0].rating ===3 ||  posts[0].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[0].rating ===4 ||  posts[0].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[0].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+               
+                </select>
           </div>
         </div>
       </div>
@@ -175,8 +284,35 @@
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
               Lorem ipsum dolor sit amet.</p>
           </div>
-          <div class="card-footer">
-            
+          <div class="posts4">
+              <select class="starnormal" name="rate" >
+                  <% if(posts[0].rating ===1 || posts[0].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[0].rating ===2 ||  posts[0].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[0].rating ===3 ||  posts[0].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[0].rating ===4 ||  posts[0].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[0].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+               
+                </select>
           </div>
         </div>
       </div>
@@ -191,10 +327,36 @@
             <h5><%= posts[5].price %></h5>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
           </div>
-          <div class="card-footer">
+          <div class="posts5">
      
-           <div id="demo"class="demo"></div>
-           
+              <select class="starnormal" name="rate" readonly>
+                  <% if(posts[0].rating ===1 || posts[0].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[0].rating ===2 ||  posts[0].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[0].rating ===3 ||  posts[0].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[0].rating ===4 ||  posts[0].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[0].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+               
+                </select>
           
                </div>
            </div>
@@ -219,8 +381,35 @@
               <h5><%= posts2[0].price %></h5>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
             </div>
-            <div class="card-footer">
-             
+            <div class="posts2_0">
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[0].rating ===1 || posts2[0].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[0].rating ===2 ||  posts2[0].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[0].rating ===3 ||  posts2[0].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[0].rating ===4 ||  posts2[0].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[0].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
             </div>
           </div>
         </div>
@@ -237,7 +426,34 @@
                 Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="card-footer">
-             
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[1].rating ===1 || posts2[1].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[1].rating ===2 ||  posts2[1].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[1].rating ===3 ||  posts2[1].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[1].rating ===4 ||  posts2[1].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[1].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
             </div>
           </div>
         </div>
@@ -253,7 +469,34 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
             </div>
             <div class="card-footer">
-              
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[2].rating ===1 || posts2[2].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[2].rating ===2 ||  posts2[2].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[2].rating ===3 ||  posts2[2].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[2].rating ===4 ||  posts2[2].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[2].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
             </div>
           </div>
         </div>
@@ -269,7 +512,34 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
             </div>
             <div class="card-footer">
-              
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[3].rating ===1 || posts2[3].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[3].rating ===2 ||  posts2[3].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[3].rating ===3 ||  posts2[3].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[3].rating ===4 ||  posts2[3].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[3].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
             </div>
           </div>
         </div>
@@ -286,7 +556,34 @@
                 Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="card-footer">
-              
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[4].rating ===1 || posts2[4].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===2 ||  posts2[4].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===3 ||  posts2[4].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===4 ||  posts2[4].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
             </div>
           </div>
         </div>
@@ -302,7 +599,6 @@
  
 
 
-
 <script type="text/javascript">
 
 
@@ -315,10 +611,14 @@
 
       $('.star').barrating({
         theme: 'fontawesome-stars',
-        readonly: false
+       
 
       });
+      $('.starnormal').barrating({
+        theme: 'fontawesome-stars',
+        readonly:true
 
+      });
       $(".js-range-slider").ionRangeSlider({
         type: "double",
         min: 0,
@@ -340,6 +640,12 @@
         $( "#test-btn" ).click(function() {
           window.location.href = `/api/find_AppByPrice/${from}/${to}`;
           });
+
+
+       
+        
+      
+    
 
    });
    

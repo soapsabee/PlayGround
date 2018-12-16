@@ -29,7 +29,34 @@
                 </p>
             </div>
             <div class="item card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    <select class="starnormal" name="rate" >
+                            <% if(r.rating ===1 || r.rating < 2  ) { %>
+                            <option value="1" selected>1</option>
+                            <% }else { %>
+                            <option value="1"> >1</option>
+                            <% }%>
+                            <% if(r.rating ===2 || r.rating < 3 ) { %>
+                            <option value="2" selected>2</option>
+                            <% }else { %>
+                            <option value="2">2</option>
+                            <% }%>
+                            <% if(r.rating ===3 || r.rating < 4){ %>
+                            <option value="3" selected>3</option>
+                            <% }else { %>
+                            <option value="3">3</option>
+                            <% }%>
+                            <% if(r.rating ===4 || r.rating < 5){ %>
+                            <option value="4" selected>4</option>
+                            <% }else { %>
+                            <option value="4">4</option>
+                            <% }%>
+                            <% if(r.rating ===5){ %>
+                            <option value="5" selected>5</option>
+                            <% }else { %>
+                            <option value="5">5</option>
+                            <% }%>
+                         
+                          </select>
             </div>
         </div>
         </div>
@@ -52,6 +79,41 @@
                 'class': 'col-lg-4 col-md-6 mb-4'
             }
         });
+
+
+        $('.star').barrating({
+        theme: 'fontawesome-stars',
+       
+
+      });
+      $('.starnormal').barrating({
+        theme: 'fontawesome-stars',
+        readonly:true
+
+      });
+      $(".js-range-slider").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 1000,
+        from: 200,
+        to: 500,
+        grid: true,
+        onFinish: function (data) {
+            // Called right after range slider instance initialised
+             from = data.from;
+             to = data.to;
+            console.log(from);          // MIN value
+            console.log(to);          // MAX values
+
+        },
+    });
+
+        
+        $( "#test-btn" ).click(function() {
+          window.location.href = `/api/find_AppByPrice/${from}/${to}`;
+          });
+
+
     })
 
 </script>

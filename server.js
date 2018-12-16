@@ -159,18 +159,23 @@ app.get('/appby_rate', (req, res) => {
 
 })
 
-app.get('/review_app/:app', (req, res) => {
+app.get('/review_app/:app/:category', (req, res) => {
   var apps = req.params.app;
-  axios.get(`http://localhost:8080/api/findreviews/?app=${apps}`)
-    .then(function (response) {
+  var category = req.params.category;
+  axios.all([
+    axios.get(`http://localhost:8080/api/findreviews/?app=${apps}`), 
+    axios.get(`http://localhost:8080/api/find_AppByName/?name=${apps}`),
+    axios.get(`http://localhost:8080/api/find_AppByCategory/?category=${category}`)
+  ])
+    .then(function (response_1,response_2,response_3) {
       let product = [];
-      response.data.map((posts) => {
+      response_1.data.map((posts) => {
 
         product.push(posts);
-
+        console.log(product)
       })
-
-      res.render('pages/review_app', { posts: product });
+     
+      res.render('pages/detail_app', { posts: product });
 
     })
     .catch(function (error) {
