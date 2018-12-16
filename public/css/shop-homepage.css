@@ -1,0 +1,37 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+span.stars, span.stars span {
+  display: block;
+  background: url(../pic/stars.png) 0 -16px repeat-x;
+  width: 100px;
+  height: 100px;
+}
+
+span.stars span {
+  background-position: 0 0;
+}
+
+
+@font-face {
+  font-family: 'pixel';
+  src: url('./font/BACKTO1982.ttf')format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+body{
+  font-family: 'pixel';
+  background-color: black;
+}

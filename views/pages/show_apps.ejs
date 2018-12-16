@@ -1,43 +1,94 @@
 <% include ../partials/header.ejs %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-3">
-      <h1 class="my-4">Shop Name</h1>
-      <div class="list-group">
-        <a href="#" class="list-group-item">Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
-      </div>
-    </div>
-    <div class="col-lg-9">
-      <div class="row">
-        <% posts.forEach(function(r) { %>
+     <div class="row">
 
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="http://placehold.it/700x400"
-                alt=""
-            /></a>
-            <div class="card-body">
-              <h4 class="card-title"><a href="#"> <%= r.app %> </a></h4>
-              <h5><%= r.price %></h5>
-              <p class="card-text">หมวดหมู่: <%= r.genres %></p>
+        <div class="col-12" style="border:solid; border-radius: 10px;  margin-top:20px; background-color: white; ">
+
+            <h1 class="my-4" style="font-family:pixel;color:black;">Search</h1>
+            <div class="list-group">
+              <div class="new"style="color:black;"><a href="/appnews">แอปยอดนิยม</a></div>
+              <div class="new"style="color:black;"><a href="/appnews">ยอดดาวน์โหลดสูงสุด</a></div>
+              <div class="new"style="color:black;"><a href="/appby_type/Free">FREE APPS</a></div>
+              <div class="new"style="color:black;"><a href="/appby_type/Paid">PAY APPS</a></div>
+              <form action="/appby_rate" method="GET">
+              <div class="new">
+                <select class="star" name="rate">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <button>ค้น</button>
             </div>
-            <div class="card-footer">
-              <small class="text-muted"
-                >&#9733; &#9733; &#9733; &#9733; &#9734;</small
-              >
+            </form>
+           
+            <input type="text" class="js-range-slider" name="my_range" value=""/>
+        <button id="test-btn">ค้น</button>
+        
             </div>
+        
           </div>
+
+    <div class="loadMore row">
+
+        <% posts.forEach(function(r) { %>
+        <div class="item col-lg-3 col-md-3 mb-3" style="margin-top:20px;">
+        <div class="item card h-100">
+            <a href="#"><img class="card-img-top" src="./pic/android_APK_ico.gif" alt="" /></a>
+            <div class="item card-body">
+                <h4 class="card-title"><a href="#" style="color:black;">
+                        <%= r.app %> </a></h4>
+                <div class="card-text">หมวดหมู่:
+                    <%= r.genres %>
+                </div>
+            </div>
+            <div class="item card-footer">
+                    <select class="starnormal" name="rate" >
+                            <% if(r.rating >=1 && r.rating < 2  ) { %>
+                            <option value="1" selected>1</option>
+                            <% }else { %>
+                            <option value="1"> >1</option>
+                            <% }%>
+                            <% if(r.rating >=2 && r.rating < 3 ) { %>
+                            <option value="2" selected>2</option>
+                            <% }else { %>
+                            <option value="2">2</option>
+                            <% }%>
+                            <% if(r.rating >=3 && r.rating < 4){ %>
+                            <option value="3" selected>3</option>
+                            <% }else { %>
+                            <option value="3">3</option>
+                            <% }%>
+                            <% if(r.rating >=4 && r.rating < 5){ %>
+                            <option value="4" selected>4</option>
+                            <% }else { %>
+                            <option value="4">4</option>
+                            <% }%>
+                            <% if(r.rating ===5){ %>
+                            <option value="5" selected>5</option>
+                            <% }else { %>
+                            <option value="5">5</option>
+                            <% }%>
+                         
+                          </select>
+            </div>
         </div>
+        </div>
+
         <% }); %>
-      </div>
+
     </div>
-  </div>
+
+
 </div>
+
+
+
+
+
+
+
 
 <% include ../partials/footer.ejs %>

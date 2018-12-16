@@ -2,18 +2,98 @@
 
 
 
-<footer class="py-5 bg-dark">
+<!-- <footer class="py-5 bg-dark">
   <div class="container">
     <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
   </div>
-  <!-- /.container -->
-</footer>
+
+</footer> -->
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <style>
+    
+@font-face {
+  font-family: 'pixel';
+  src: url('./font/BACKTO1982.ttf')format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+.card-title{
+ font-size:1em;
+ line-height:1em;
+ height:5em;
+ white-space: wrap;
+ text-overflow: ellipsis; 
+}
+
+    
+  </style>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.loadMore').loadMoreResults({
+            displayedItems: 6,
+            showItems: 6,
+            tag: {
+                'name': 'div',
+                'class': 'col-lg-4 col-md-6 mb-4'
+            }
+        });
+
+
+        $('.star').barrating({
+        theme: 'fontawesome-stars',
+       
+
+      });
+      $('.starnormal').barrating({
+        theme: 'fontawesome-stars',
+        readonly:true
+
+      });
+      $(".js-range-slider").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 1000,
+        from: 200,
+        to: 500,
+        grid: true,
+        onFinish: function (data) {
+            // Called right after range slider instance initialised
+             from = data.from;
+             to = data.to;
+            console.log(from);          // MIN value
+            console.log(to);          // MAX values
+
+        },
+    });
+
+        
+        $( "#test-btn" ).click(function() {
+          window.location.href = `/api/find_AppByPrice/${from}/${to}`;
+          });
+
+         $("#btnbusiness").click(function () {
+        window.location.href = `/show_apps/Business`;
+         });
+         
+         $(".btn-blue").mouseover(function () {
+        $(this).css("background-color", "#7CEDE7");
+      }).mouseout(function () {
+        $(this).css("background-color", "white");
+      });
+
+      $(".btn-pink").mouseover(function () {
+        $(this).css("background-color", "#D690D4");
+      }).mouseout(function () {
+        $(this).css("background-color", "white");
+      });
+    })
+
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   </body>

@@ -1,19 +1,70 @@
 <% include ../partials/header.ejs %>
 
+<div class="headpic" style="border:solid; color:white; height:50%;">
+  <div class="headback" style="border:solid; color:whitesmoke; height:600px;background-image:url(./pic/background.png); background-repeat: no-repeat;  background-size: cover;">
+    <div class="row" style="margin-top:60px;">
+  <div class="col-12"style=" text-align: center;"> 
+    <div><img src="./pic/LOGO.png" style=" width:700px;"></div>
+    <form action="/appby_name" method="GET">
+      <div style="margin-left:auto; margin-right:auto; width:40%; margin-top: 50px;" >
+        <input type="text" class="form-control"  name="name" id="name" placeholder="Search in PlayStore..">
+      </div>
+      <div style="margin-left:auto; margin-right:auto; margin-top: 10px;">
+      <button type="submit" style="color:black;" class="btn btn-default"><i class="fas fa-search"></i>&nbsp;<b>Search</b></button>
+      </div>
+      
+    </form>
+  </div> 
+</div>
+    <div class="buttompic" style="height: 100px; margin-top:210px;">
+      <div class="row">
+      <div class="btn-pink col-1 button buttom1"style="border:solid; border-radius: 25px;  width: 50px; height: 100px; margin-left:300px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-user-tie"style="font-size:50px; color:black; margin-top:12px;"></i></div><div><a href="/show_apps/Business" style="color:black;">Business</a></div></div>
+      <div class="btn-blue col-1 buttom2"style="border:solid; border-radius: 25px;  width: 50px; height: 100px; background-color:white; text-align:center; "><div class="col-12"><i class="fab fa-google-play"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/ENTERTAINMENT"style="color:black;">Entertain</a></div></div>
+      <div class="btn-pink col-1 buttom3"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-camera-retro"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/PHOTOGRAPHY"style="color:black;">Photo</a></div></div>
+      <div class="btn-blue col-1 buttom4"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="far fa-comments"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/SOCIAL"style="color:black;">Social</a></div></div>
+      <div class="btn-pink col-1 buttom5"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fab fa-pagelines"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/LIFESTYLE"style="color:black;">LifeStyle</a></div></div>
+      <div class="btn-blue col-1 buttom6"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-graduation-cap"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/EDUCATION"style="color:black;" >Education</a></div></div>
+      <div class="btn-pink col-1 buttom7"style="border:solid; border-radius: 200px;  width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-caret-down"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;">More..</div></div>
+    </div>
+  </div>
+  
+
+    
+</div>
 
 <div class="container">
   <div class="title" style="margin-top:50px;">
-  <h1>แอพยอดนิยม</h1>
+    
+
 </div>
 <div class="row">
 
-  <div class="col-lg-3">
+  <div class="col-lg-3" style="border:solid; border-radius: 10px;  margin-top:20px; background-color: white; ">
 
-    <h1 class="my-4">Shop Name</h1>
+    <h1 class="my-4" style="font-family:pixel;color:black;">Search</h1>
     <div class="list-group">
-      <a href="#" class="list-group-item">Category 1</a>
-      <a href="#" class="list-group-item">Category 2</a>
-      <a href="#" class="list-group-item">Category 3</a>
+      <div class="new"style="color:black;"><a href="/appnews">HOT APPS</a></div>
+      <div class="new"style="color:black;"><a href="/appnews">MOST DOWNLOAD APPS</a></div>
+      <div class="new"style="color:black;"><a href="/appby_type/Free">FREE APPS</a></div>
+      <div class="new"style="color:black;"><a href="/appby_type/Paid">PAY APPS</a></div>
+      <form action="/appby_rate" method="GET">
+      <div class="new">
+        <select class="star" name="rate">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button>Search</button>
+    </div>
+    </form>
+   <div style="margin-top: 15px;">
+    <input type="text" class="js-range-slider" name="my_range" value=""/>
+</div>
+<div style="margin-top: 5px;">
+<button id="test-btn">Search</button>
+</div>
     </div>
 
   </div>
@@ -47,62 +98,143 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-<div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='show_apps'">
+<div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='/appMostlyInst'">
     <h2>เพิ่มเติม >></h2>
   </button></div>
   
     <div class="row">
 
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
+      <div class="col-3">
+        <div class="card ">
           <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#"><%= posts[0].app %></a>
             </h4>
             <h5><%= posts[0].price %></h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+            <p class="card-text"></p>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-          </div>
+          
+          
+          <select class="starnormal"  name="rate" >
+            <% if(posts[0].rating ===1 || posts[0].rating < 2  ) { %>
+            <option value="1" selected>1</option>
+            <% }else { %>
+            <option value="1"> >1</option>
+            <% }%>
+            <% if(posts[0].rating ===2 ||  posts[0].rating < 3 ) { %>
+            <option value="2" selected>2</option>
+            <% }else { %>
+            <option value="2">2</option>
+            <% }%>
+            <% if(posts[0].rating ===3 ||  posts[0].rating < 4){ %>
+            <option value="3" selected>3</option>
+            <% }else { %>
+            <option value="3">3</option>
+            <% }%>
+            <% if(posts[0].rating ===4 ||  posts[0].rating < 5){ %>
+            <option value="4" selected>4</option>
+            <% }else { %>
+            <option value="4">4</option>
+            <% }%>
+            <% if(posts[0].rating ===5){ %>
+            <option value="5" selected>5</option>
+            <% }else { %>
+            <option value="5">5</option>
+            <% }%>
+         
+          </select>
+        
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
+      <div class="col-3">
+        <div class="card">
           <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#"><%= posts[1].app %></a>
             </h4>
             <h5><%= posts[1].price %></h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
-              Lorem ipsum dolor sit amet.</p>
+            <p class="card-text"></p>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          <div class="posts1">
+              <select class="starnormal" name="rate" >
+                  <% if(posts[0].rating ===1 || posts[0].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[0].rating ===2 ||  posts[0].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[0].rating ===3 ||  posts[0].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[0].rating ===4 ||  posts[0].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[0].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+               
+                </select>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
+      <div class="col-3 ">
+        <div class="card">
           <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#"><%= posts[2].app %></a>
             </h4>
             <h5><%= posts[2].price %></h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+            <p class="card-text"></p>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          <div class="posts2">
+              <select class="starnormal" name="rate" >
+                  <% if(posts[2].rating ===1 || posts[2].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[2].rating ===2 ||  posts[2].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[2].rating ===3 ||  posts[2].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[2].rating ===4 ||  posts[2].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[2].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+               
+                </select>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-3">
         <div class="card h-100">
           <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
           <div class="card-body">
@@ -110,15 +242,42 @@
               <a href="#"><%= posts[3].app %></a>
             </h4>
             <h5><%= posts[3].price %></h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+            <p class="card-text"></p>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          <div class="posts3">
+              <select class="starnormal" name="rate" >
+                  <% if(posts[0].rating ===1 || posts[0].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[0].rating ===2 ||  posts[0].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[0].rating ===3 ||  posts[0].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[0].rating ===4 ||  posts[0].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[0].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+               
+                </select>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-3">
         <div class="card h-100">
           <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
           <div class="card-body">
@@ -126,16 +285,42 @@
               <a href="#"><%= posts[4].app %></a>
             </h4>
             <h5><%= posts[4].price %></h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
-              Lorem ipsum dolor sit amet.</p>
+            <p class="card-text"></p>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          <div class="posts4">
+              <select class="starnormal" name="rate" >
+                  <% if(posts[0].rating ===1 || posts[0].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[0].rating ===2 ||  posts[0].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[0].rating ===3 ||  posts[0].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[0].rating ===4 ||  posts[0].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[0].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+               
+                </select>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-3">
         <div class="card h-100">
           <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
           <div class="card-body">
@@ -143,25 +328,371 @@
               <a href="#"><%= posts[5].app %></a>
             </h4>
             <h5><%= posts[5].price %></h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+            <p class="card-text"></p>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          <div class="posts5">
+     
+              <select class="starnormal" name="rate" readonly>
+                  
+                    <% if(posts[5].rating >=1 && posts[5].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts[5].rating >=2 &&  posts[5].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts[5].rating >=3 &&  posts[5].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts[5].rating >=4 &&  posts[5].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts[5].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+               
+                </select>
+          
+               </div>
+           </div>
+           </div>
+
+          <div class="col-3">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">
+                    <%= posts[6].app %></a>
+                </h4>
+                <h5>
+                  <%= posts[6].price %>
+                </h5>
+                <p class="card-text"></p>
+              </div>
+              <div class="posts5">
+          
+                <select class="starnormal" name="rate" readonly>
+                  <% if(posts[6].rating >=1 && posts[6].rating < 2  ) { %>
+                  <option value="1" selected>1</option>
+                  <% }else { %>
+                  <option value="1"> >1</option>
+                  <% }%>
+                  <% if(posts[6].rating >=2 &&  posts[6].rating < 3 ) { %>
+                  <option value="2" selected>2</option>
+                  <% }else { %>
+                  <option value="2">2</option>
+                  <% }%>
+                  <% if(posts[6].rating >=3 &&  posts[6].rating < 4){ %>
+                  <option value="3" selected>3</option>
+                  <% }else { %>
+                  <option value="3">3</option>
+                  <% }%>
+                  <% if(posts[6].rating >=4 &&  posts[6].rating < 5){ %>
+                  <option value="4" selected>4</option>
+                  <% }else { %>
+                  <option value="4">4</option>
+                  <% }%>
+                  <% if(posts[0].rating ===5){ %>
+                  <option value="5" selected>5</option>
+                  <% }else { %>
+                  <option value="5">5</option>
+                  <% }%>
+          
+                </select>
+          
+              </div>
+            </div>
+          </div>
+
+
+           
           </div>
         </div>
       </div>
+   
+      <div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='/appnews'">
+        <h2>เพิ่มเติม >></h2>
+      </button></div>
 
+      <div class="row">
+
+        <div class="col-3">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"><%= posts2[0].app %></a>
+              </h4>
+              <h5><%= posts2[0].price %></h5>
+              <p class="card-text"></p>
+            </div>
+            <div class="posts2_0">
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[0].rating ===1 || posts2[0].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[0].rating ===2 ||  posts2[0].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[0].rating ===3 ||  posts2[0].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[0].rating ===4 ||  posts2[0].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[0].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-3">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"><%= posts2[1].app %></a>
+              </h4>
+              <h5><%= posts2[1].price %></h5>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[1].rating ===1 || posts2[1].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[1].rating ===2 ||  posts2[1].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[1].rating ===3 ||  posts2[1].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[1].rating ===4 ||  posts2[1].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[1].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-3">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"><%= posts2[2].app %></a>
+              </h4>
+              <h5><%= posts2[2].price %></h5>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[2].rating ===1 || posts2[2].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[2].rating ===2 ||  posts2[2].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[2].rating ===3 ||  posts2[2].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[2].rating ===4 ||  posts2[2].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[2].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-3">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"><%= posts2[3].app %></a>
+              </h4>
+              <h5><%= posts2[3].price %></h5>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[3].rating ===1 || posts2[3].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[3].rating ===2 ||  posts2[3].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[3].rating ===3 ||  posts2[3].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[3].rating ===4 ||  posts2[3].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[3].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-3">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"><%= posts2[4].app %></a>
+              </h4>
+              <h5><%= posts2[4].price %></h5>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[4].rating ===1 || posts2[4].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===2 ||  posts2[4].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===3 ||  posts2[4].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===4 ||  posts2[4].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-3">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"><%= posts2[4].app %></a>
+              </h4>
+              <h5><%= posts2[4].price %></h5>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <select class="starnormal" name="rate" >
+                    <% if(posts2[4].rating ===1 || posts2[4].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===2 ||  posts2[4].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===3 ||  posts2[4].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===4 ||  posts2[4].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[4].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
+            </div>
+          </div>
+        </div>
+  
+    
+            </div>
+          </div>
+        </div>
+     
     </div>
   
 
-  </div>
-
-
-</div>
-  
-  </div>
-</div>
-
+ 
 
 
 <% include ../partials/footer.ejs %>
