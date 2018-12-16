@@ -1,18 +1,47 @@
 <% include ../partials/header.ejs %>
 
-<div class="headpic" style="border:solid; color:white; height:10%;">
-        <div class="headback" style="border:solid; color:whitesmoke; height:600px;background-image:url(./pic/moba1.jpg); background-repeat: no-repeat;  background-size: cover;">
+<div class="headpic" style="border:solid; color:white; height:1%;">
+        <div class="headback" style="border:solid; color:whitesmoke; height:600px;background-image:url(./pic/SYY2mJz.png); background-repeat: no-repeat;  background-size: cover;">
          <div class="row">
-            <div class="iconapp" style="background-image:url(./pic/moba2.jpg); background-repeat: no-repeat;  background-size: cover;border:solid; border-radius: 25px; color:white;  margin-left: 50px; margin-top:400px; width:270px; height:270px; background-color:whitesmoke; "><div class="buttonicon" style="border:solid; color:black;margin-top:350px;">FREE</div> </div>
+            <div class="iconapp" style="background-image:url(./pic/android_APK_ico.gif); background-repeat: no-repeat;  background-size: cover;border:solid; border-radius: 25px; color:white;  margin-left: 50px; margin-top:400px; width:270px; height:270px; background-color:whitesmoke; "><div class="buttonicon" style="border:solid; color:black;margin-top:350px;">FREE</div> </div>
             
             <div class="titleapp" style="border:solid; border-radius: 25px; color:white; margin-top:580px;  margin-left: 5px;  width:900px; height:300px; background-color:whitesmoke; ">
                 <div class="row"> 
-                <div class="title" style="margin-left:20px; color:black;"><h1>Garena RoV: Mobile MOBA </h1> </div> 
-                <div class="star" style="color: black; margin-left:250px;">#####<br>1,823,362</div>
+                <div class="title" style="margin-left:20px; color:black;"><h1><%= posts[0].app %></h1> </div> 
+                <div class="starrating" style="margin-left:250px;">
+                  <select class="starnormal" name="rate" >
+                    <% if(posts2[0].rating >=1 && posts2[0].rating < 2  ) { %>
+                    <option value="1" selected>1</option>
+                    <% }else { %>
+                    <option value="1"> >1</option>
+                    <% }%>
+                    <% if(posts2[0].rating >=2 && posts2[0].rating < 3 ) { %>
+                    <option value="2" selected>2</option>
+                    <% }else { %>
+                    <option value="2">2</option>
+                    <% }%>
+                    <% if(posts2[0].rating >=3 && posts2[0].rating < 4){ %>
+                    <option value="3" selected>3</option>
+                    <% }else { %>
+                    <option value="3">3</option>
+                    <% }%>
+                    <% if(posts2[0].rating >=4 && posts2[0].rating < 5){ %>
+                    <option value="4" selected>4</option>
+                    <% }else { %>
+                    <option value="4">4</option>
+                    <% }%>
+                    <% if(posts2[0].rating ===5){ %>
+                    <option value="5" selected>5</option>
+                    <% }else { %>
+                    <option value="5">5</option>
+                    <% }%>
+                 
+                  </select>
+                 <br>1,823,362</div>
                 
              </div>  
-                   <div class="genres" style="margin-left:20px; color:black;"><h4>Entertainment[genres]</h4> </div>
-                   <div class="content_rate" style="margin-left:20px; color:black;"><h6>Everyone</h6> </div>
+                   <div class="genres" style="margin-left:20px; color:black;"><h4><%= posts2[0].genres %></h4> </div>
+                   <div class="content_rate" style="margin-left:20px; color:black;"><h6><%= posts2[0].contentRate %></h6> </div>
                    <div class="content_rate" style="margin-left:20px; color:black;">เสนอการซื้อในแอปพลิเคชันนี้ทำงานร่วมกับอุปกรณ์ทั้งหมดของคุณได้ </div>
                    <div class="install"><button type="button" class="btn btn-success" style="margin-left:650px;">ติดตั้ง</button></div>
                 </div>
@@ -24,10 +53,10 @@
 
 </div>
 <div class="container">
-<div class="body" style="border:solid; color:black; margin-top:300px; width:1100px; height: 2500px;">
+<div class="body" style=" margin-top:300px; width:1100px; height: 2500px;">
   
  <div class="row">
-        <div class="col-6"><div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="border:solid; color:black; width:500px; height: 300px; margin-left:25px;">
+        <div class="col-6"><div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width:500px; height: 300px; margin-left:25px;">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <img class="d-block w-100" src="./pic/moba1.jpg" alt="First slide">
@@ -48,19 +77,26 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div></div>
-              <div class="col-6" style="border:solid; color:red;  width:700px; height: 300px; "><div class="card" style="width: 500px; height: 290px;">
+              <div class="col-6" style="width:700px; height: 300px; "><div class="card" style="width: 500px; height: 290px;">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+                  <h5 class="card-subtitle mb-2 text-muted">ข้อมูลเพิ่มเติม</h5>
+                  <h8 class="card-subtitle mb-2 text-muted">Category: <%= posts2[0].category %></h8>
+                  <br>
+                  <h8 class="card-text mb-2 text-muted">Reviews: <%= posts2[0].reviews %></h8>
+                  <br>
+                  <h8 class="card-text mb-2 text-muted">Installs: <%= posts2[0].installs %></h8>
+                  <br>
+                  <h8 class="card-text mb-2 text-muted">Current Version: <%= posts2[0].curver %></h8>
+                  <br>
+                  <h8 class="card-text mb-2 text-muted">Android Version: <%= posts2[0].androidver %></h8>
+                  <br>
+                  <h8 class="card-text mb-2 text-muted">Last Update: <%= posts2[0].lastupdate %></h8>
                 </div>
               </div></div>
               
 </div>
 
-<div class="review" style="border:solid; color:black; width:700px; height: 500px;">
+<div class="review" style="width:700px; height: 500px;">
 
 <div class="card" style="width:700px;">
   <div class="card-body"><div class="row">
@@ -113,7 +149,7 @@
   </div>
 </div>
 
-<div class="col-12" style="border:solid; color:red; margin-top:50px; width:1500px; height: 300px; "><div class="card" style="width: 1050px; height: 290px;">
+<div class="col-12" style="margin-top:50px; width:1500px; height: 300px; "><div class="card" style="width: 1050px; height: 290px;">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>

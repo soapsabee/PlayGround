@@ -167,17 +167,28 @@ app.get('/review_app/:app/:category', (req, res) => {
     axios.get(`http://localhost:8080/api/find_AppByName/?name=${apps}`),
     axios.get(`http://localhost:8080/api/find_AppByCategory/?category=${category}`)
   ])
-    .then(function (response_1,response_2,response_3) {
+    .then(axios.spread((response_1,response_2,response_3) => {
       let product = [];
+      let product2 = [];
+      let product3 = [];
+
       response_1.data.map((posts) => {
 
         product.push(posts);
         console.log(product)
+      }),
+      response_2.data.map((posts2) => {
+
+        product2.push(posts2);
+      })
+      response_3.data.map((posts3) => {
+
+        product3.push(posts3);
       })
      
-      res.render('pages/detail_app', { posts: product });
+      res.render('pages/detail_app', { posts: product , posts2:product2 , posts3:product3 });
 
-    })
+    }))
     .catch(function (error) {
       // handle error
       console.log(error);
