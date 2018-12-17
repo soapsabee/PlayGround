@@ -4,21 +4,28 @@
   <div class="row">
     <div
       class="col-12"
-      style="border:solid; border-radius: 10px;  margin-top:20px; background-color: white; "
+      style="border-radius: 10px;  margin-top:20px; background-color: white; box-shadow: 5px 10px rgb(112, 105, 105);"
     >
-      <h1 class="my-4" style="font-family:pixel;color:black;">Search</h1>
+      <h1 class="my-4" style="font-family:pixel;color:rgb(112, 105, 105);">
+        Search
+      </h1>
       <div class="list-group">
-        <div class="new" style="color:black;">
-          <a href="/appnews">แอปยอดนิยม</a>
-        </div>
-        <div class="new" style="color:black;">
-          <a href="/appnews">ยอดดาวน์โหลดสูงสุด</a>
-        </div>
-        <div class="new" style="color:black;">
-          <a href="/appby_type/Free">FREE APPS</a>
-        </div>
-        <div class="new" style="color:black;">
-          <a href="/appby_type/Paid">PAY APPS</a>
+        <div class="row">
+          <div class="col-2" style="color:black; margin-left:100px; ">
+            <a href="/appnews">HOT APPS</a>
+          </div>
+          <div class="col-2" style="color:black;">
+            <a href="/appMostlyInst">MOST DOWNLOAD</a>
+          </div>
+          <div class="col-2" style="color:black;">
+            <a href="/appnews">TOP10 REVIEWED</a>
+          </div>
+          <div class="col-2" style="color:black;">
+            <a href="/appby_type/Free">FREE APPS</a>
+          </div>
+          <div class="col-2" style="color:black;">
+            <a href="/appby_type/Paid">PAY APPS</a>
+          </div>
         </div>
         <form action="/appby_rate" method="GET">
           <div class="new">
@@ -29,25 +36,39 @@
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-            <button>ค้น</button>
+            <button class="btn btn-success btn-md">Search</button>
           </div>
         </form>
-
-        <input type="text" class="js-range-slider" name="my_range" value="" />
-        <button id="test-btn">ค้น</button>
+        <div style="margin-top:10px;">
+          <input type="text" class="js-range-slider" name="my_range" value="" />
+        </div>
+        <button
+          id="test-btn"
+          class="btn btn-success btn-block"
+          style="margin-top:10px;"
+        >
+          Search
+        </button>
+        <br /><br />
       </div>
+      <br />
     </div>
 
     <div class="loadMore row">
       <% posts.forEach(function(r) { %>
       <div class="item col-lg-3 col-md-3 mb-3" style="margin-top:20px;">
         <div class="item card h-100">
-          <a href="#"
+          <a href="/review_app/<%= r.app %>/<%= r.category %>"
             ><img class="card-img-top" src="./pic/android_APK_ico.gif" alt=""
           /></a>
           <div class="item card-body">
             <h4 class="card-title">
-              <a href="#" style="color:black;"> <%= r.app %> </a>
+              <a
+                href="/review_app/<%= r.app %>/<%= r.category %>"
+                style="color:black;"
+              >
+                <%= r.app %>
+              </a>
             </h4>
             <div class="card-text">หมวดหมู่: <%= r.genres %></div>
           </div>

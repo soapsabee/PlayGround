@@ -18,16 +18,15 @@
 </div>
     <div class="buttompic" style="height: 100px; margin-top:210px;">
       <div class="row">
-      <div class="btn-pink col-1 button buttom1"style="border:solid; border-radius: 25px;  width: 50px; height: 100px; margin-left:300px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-user-tie"style="font-size:50px; color:black; margin-top:12px;"></i></div><div><a href="/show_apps/Business" style="color:black;">Business</a></div></div>
-      <div class="btn-blue col-1 buttom2"style="border:solid; border-radius: 25px;  width: 50px; height: 100px; background-color:white; text-align:center; "><div class="col-12"><i class="fab fa-google-play"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/ENTERTAINMENT"style="color:black;">Entertain</a></div></div>
-      <div class="btn-pink col-1 buttom3"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-camera-retro"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/PHOTOGRAPHY"style="color:black;">Photo</a></div></div>
-      <div class="btn-blue col-1 buttom4"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="far fa-comments"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/SOCIAL"style="color:black;">Social</a></div></div>
-      <div class="btn-pink col-1 buttom5"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fab fa-pagelines"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/LIFESTYLE"style="color:black;">LifeStyle</a></div></div>
-      <div class="btn-blue col-1 buttom6"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-graduation-cap"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/EDUCATION"style="color:black;" >Education</a></div></div>
-      <div class="btn-pink col-1 buttom7"style="border:solid; border-radius: 200px;  width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-caret-down"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;">More..</div></div>
+      <div id="btn-business" class="btn-pink col-1 button buttom1"style="border:solid; border-radius: 25px;  width: 50px; height: 100px; margin-left:300px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-user-tie"style="font-size:50px; color:black; margin-top:12px;"></i></div><div><a href="/show_apps/Business" style="color:black;">Business</a></div></div>
+      <div id="btn-entertain" class="btn-blue col-1 buttom2"style="border:solid; border-radius: 25px;  width: 50px; height: 100px; background-color:white; text-align:center; "><div class="col-12"><i class="fab fa-google-play"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/ENTERTAINMENT"style="color:black;">Entertain</a></div></div>
+      <div id="btn-photo" class="btn-pink col-1 buttom3"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-camera-retro"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/PHOTOGRAPHY"style="color:black;">Photo</a></div></div>
+      <div id="btn-social"class="btn-blue col-1 buttom4"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="far fa-comments"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/SOCIAL"style="color:black;">Social</a></div></div>
+      <div id="btn-life" class="btn-pink col-1 buttom5"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fab fa-pagelines"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/LIFESTYLE"style="color:black;">LifeStyle</a></div></div>
+      <div id="btn-edu" class="btn-blue col-1 buttom6"style="border:solid; border-radius: 25px; width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-graduation-cap"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;"><a href="/show_apps/EDUCATION"style="color:black;" >Education</a></div></div>
+      <div id="btn-more"class="btn-pink col-1 buttom7"style="border:solid; border-radius: 200px;  width: 50px; height: 100px; background-color:white; text-align:center;"><div class="col-12"><i class="fas fa-caret-down"style="font-size:50px; color:black; margin-top:12px;"></i></div><div style="color:black;" data-toggle="modal" data-target="#myModal" >More..</div></div>
     </div>
   </div>
-  
 
     
 </div>
@@ -44,7 +43,8 @@
     <h1 class="my-4" style="font-family:pixel;color:black;">Search</h1>
     <div class="list-group">
       <div class="new"style="color:black;"><a href="/appnews">HOT APPS</a></div>
-      <div class="new"style="color:black;"><a href="/appnews">MOST DOWNLOAD APPS</a></div>
+      <div class="new"style="color:black;"><a href="/appMostlyInst">MOST DOWNLOAD APPS</a></div>
+      <div class="new" style="color:black;"><a href="/appMostlyInst">TOP10 MOST REVIEWED</a></div>
       <div class="new"style="color:black;"><a href="/appby_type/Free">FREE APPS</a></div>
       <div class="new"style="color:black;"><a href="/appby_type/Paid">PAY APPS</a></div>
       <form action="/appby_rate" method="GET">
@@ -56,14 +56,14 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <button>Search</button>
+      <button class="btn btn-success btn-md" >Search</button>
     </div>
     </form>
    <div style="margin-top: 15px;">
     <input type="text" class="js-range-slider" name="my_range" value=""/>
 </div>
 <div style="margin-top: 5px;">
-<button id="test-btn">Search</button>
+<button id="test-btn" class="btn btn-success btn-block" >Search</button>
 </div>
     </div>
 
@@ -98,20 +98,20 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+    <div class="text" style="text-align:left; color: #000;" ><h1>MOST DOWNLOAD APPS</h1></div>
 <div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='/appMostlyInst'">
-    <h2>เพิ่มเติม >></h2>
+    <h2>Show more >></h2>
   </button></div>
   
     <div class="row">
 
       <div class="col-3">
         <div class="card ">
-          <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+          <a href="/review_app/<%= posts[0].app %>/<%= posts[0].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#"><%= posts[0].app %></a>
+              <a href=/review_app/<%= posts[0].app %>/<%= posts[0].category %> ><%= posts[0].app %></a>
             </h4>
-            <h5><%= posts[0].price %></h5>
             <p class="card-text"></p>
           </div>
           
@@ -150,12 +150,11 @@
 
       <div class="col-3">
         <div class="card">
-          <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+          <a href="/review_app/<%= posts[1].app %>/<%= posts[1].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#"><%= posts[1].app %></a>
+              <a href="/review_app/<%= posts[1].app %>/<%= posts[1].category %>"><%= posts[1].app %></a>
             </h4>
-            <h5><%= posts[1].price %></h5>
             <p class="card-text"></p>
           </div>
           <div class="posts1">
@@ -193,12 +192,11 @@
 
       <div class="col-3 ">
         <div class="card">
-          <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+          <a href="/review_app/<%= posts[2].app %>/<%= posts[2].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#"><%= posts[2].app %></a>
+              <a href="/review_app/<%= posts[2].app %>/<%= posts[2].category %>"><%= posts[2].app %></a>
             </h4>
-            <h5><%= posts[2].price %></h5>
             <p class="card-text"></p>
           </div>
           <div class="posts2">
@@ -236,12 +234,11 @@
 
       <div class="col-3">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+          <a href="/review_app/<%= posts[3].app %>/<%= posts[3].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#"><%= posts[3].app %></a>
+              <a href="/review_app/<%= posts[3].app %>/<%= posts[3].category %>"><%= posts[3].app %></a>
             </h4>
-            <h5><%= posts[3].price %></h5>
             <p class="card-text"></p>
           </div>
           <div class="posts3">
@@ -279,12 +276,11 @@
 
       <div class="col-3">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+          <a href="/review_app/<%= posts[4].app %>/<%= posts[4].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#"><%= posts[4].app %></a>
+              <a href="/review_app/<%= posts[4].app %>/<%= posts[4].category %>"><%= posts[4].app %></a>
             </h4>
-            <h5><%= posts[4].price %></h5>
             <p class="card-text"></p>
           </div>
           <div class="posts4">
@@ -322,12 +318,11 @@
 
       <div class="col-3">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+          <a href="/review_app/<%= posts[5].app %>/<%= posts[5].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#"><%= posts[5].app %></a>
+              <a href="/review_app/<%= posts[5].app %>/<%= posts[5].category %>"><%= posts[5].app %></a>
             </h4>
-            <h5><%= posts[5].price %></h5>
             <p class="card-text"></p>
           </div>
           <div class="posts5">
@@ -368,15 +363,12 @@
 
           <div class="col-3">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+              <a href="/review_app/<%= posts[6].app %>/<%= posts[6].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">
+                  <a href="/review_app/<%= posts[6].app %>/<%= posts[6].category %>">
                     <%= posts[6].app %></a>
                 </h4>
-                <h5>
-                  <%= posts[6].price %>
-                </h5>
                 <p class="card-text"></p>
               </div>
               <div class="posts5">
@@ -419,21 +411,21 @@
           </div>
         </div>
       </div>
-   
+  <div class="text" style="text-align:left; color: #000;">
+    <h1>HOT APPS</h1></div>
       <div class="more" style="text-align:right"><button type="button" class="btn btn-light" onclick="location.href='/appnews'">
-        <h2>เพิ่มเติม >></h2>
+        <h2>Show more >></h2>
       </button></div>
 
       <div class="row">
 
         <div class="col-3">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+            <a href="/review_app/<%= posts2[0].app %>/<%= posts2[0].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#"><%= posts2[0].app %></a>
+                <a href="/review_app/<%= posts2[0].app %>/<%= posts2[0].category %>"><%= posts2[0].app %></a>
               </h4>
-              <h5><%= posts2[0].price %></h5>
               <p class="card-text"></p>
             </div>
             <div class="posts2_0">
@@ -471,12 +463,11 @@
   
         <div class="col-3">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+            <a href="/review_app/<%= posts2[1].app %>/<%= posts2[1].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#"><%= posts2[1].app %></a>
+                <a href="/review_app/<%= posts2[1].app %>/<%= posts2[1].category %>"><%= posts2[1].app %></a>
               </h4>
-              <h5><%= posts2[1].price %></h5>
               <p class="card-text"></p>
             </div>
             <div class="card-footer">
@@ -514,12 +505,11 @@
   
         <div class="col-3">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+            <a href="/review_app/<%= posts2[2].app %>/<%= posts2[2].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#"><%= posts2[2].app %></a>
+                <a href="/review_app/<%= posts2[2].app %>/<%= posts2[2].category %>"><%= posts2[2].app %></a>
               </h4>
-              <h5><%= posts2[2].price %></h5>
               <p class="card-text"></p>
             </div>
             <div class="card-footer">
@@ -557,12 +547,11 @@
   
         <div class="col-3">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+            <a href="/review_app/<%= posts2[3].app %>/<%= posts2[3].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#"><%= posts2[3].app %></a>
+                <a href="/review_app/<%= posts2[3].app %>/<%= posts2[3].category %>"><%= posts2[3].app %></a>
               </h4>
-              <h5><%= posts2[3].price %></h5>
               <p class="card-text"></p>
             </div>
             <div class="card-footer">
@@ -600,12 +589,12 @@
   
         <div class="col-3">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+            <a href="/review_app/<%= posts2[4].app %>/<%= posts2[4].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#"><%= posts2[4].app %></a>
+                <a href="/review_app/<%= posts2[4].app %>/<%= posts2[4].category %>"><%= posts2[4].app %></a>
               </h4>
-              <h5><%= posts2[4].price %></h5>
+      
               <p class="card-text"></p>
             </div>
             <div class="card-footer">
@@ -643,12 +632,12 @@
 
           <div class="col-3">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
+            <a href="/review_app/<%= posts2[4].app %>/<%= posts2[4].category %>"><img class="card-img-top" src="http://lorempixel.com/700/400/technics/" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#"><%= posts2[4].app %></a>
+                <a href="/review_app/<%= posts2[4].app %>/<%= posts2[4].category %>"><%= posts2[4].app %></a>
               </h4>
-              <h5><%= posts2[4].price %></h5>
+            
               <p class="card-text"></p>
             </div>
             <div class="card-footer">
@@ -690,9 +679,269 @@
         </div>
      
     </div>
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
   
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header"> 
+          <h4 class="modal-title" style="text-align:left;" >Category</h4>
+          
+         
+        </div>
+        <div class="modal-body">
+       <div class="row">
+<div class="col-2">
 
- 
+<i class="fas fa-user-tie" style="font-size:50px; color:black; margin-top:12px;"></i>
+<div><a href="/show_apps/Business" style="color:black;">Business</a></div>
+</div>
+
+
+
+<div class="col-2">
+
+  <i class="fab fa-google-play" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/ENTERTAINMENT" style="color:black;">Entertain</a></div>
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-camera-retro" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/PHOTOGRAPHY" style="color:black;">Photo</a></div>
+</div>
+
+<div class="col-2">
+
+  <i class="far fa-comments" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/SOCIAL" style="color:black;">Social</a></div>
+</div>
+
+<div class="col-2">
+
+<i class="fab fa-pagelines" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/LIFESTYLE" style="color:black;">LifeStyle</a></div>
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-graduation-cap" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/EDUCATION" style="color:black;">Education</a></div>
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-child" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Family" style="color:black;">Family</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-palette" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Parenting" style="color:black;">Parenting</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-id-badge" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Personal" style="color:black;">Personal</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-home" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/House" style="color:black;">House</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-map-marked-alt" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Map+And+Navigation" style="color:black;">Map</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-gamepad" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Game" style="color:black;">Game</a></div>
+
+</div>
+
+
+<div class="col-2">
+
+  <i class="fas fa-pen-nib" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Art+and+Design" style="color:black;">Art</a></div>
+
+</div>
+
+
+<div class="col-2">
+
+  <i class="fas fa-video" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Video+Players" style="color:black;">Video Players</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-utensils" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Food+and+Drink" style="color:black;">Food</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-car" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Auto+and+Vehicles" style="color:black;">Vehicles</a></div>
+
+</div>
+
+
+<div class="col-2">
+
+  <i class="fas fa-calendar-check" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Events" style="color:black;">Events</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-tools" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Tools" style="color:black;">Tools</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-book-reader" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Libraries" style="color:black;">Libraries</a></div>
+
+</div>
+
+
+<div class="col-2">
+
+  <i class="fas fa-journal-whills" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Comics" style="color:black;">Comics</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-shopping-basket" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Shopping" style="color:black;">Shopping</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-newspaper" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/News" style="color:black;">News</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-briefcase-medical" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Medical" style="color:black;">Medical</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-coins" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Finance" style="color:black;">Finance</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-box-open" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Product" style="color:black;">Product</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-hiking" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Health" style="color:black;">Health</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fab fa-gratipay" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Dating" style="color:black;">Dating</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-snowboarding" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Sports" style="color:black;">Sports</a></div>
+
+</div>
+
+
+<div class="col-2">
+
+  <i class="fas fa-sun" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Weather" style="color:black;">Weather</a></div>
+
+</div>
+
+
+<div class="col-2">
+
+  <i class="fas fa-plane-departure" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Travel" style="color:black;">Travel</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-prescription-bottle" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Beauty" style="color:black;">Beauty</a></div>
+
+</div>
+
+<div class="col-2">
+
+  <i class="fas fa-handshake" style="font-size:50px; color:black; margin-top:12px;"></i>
+  <div><a href="/show_apps/Community" style="color:black;">Community</a></div>
+
+</div>
+
+
+
+
+
+</div>
+</div>
+       </div>
+        
+     
+      
+
+        
+        </div>
+      
+      </div>
+  
+    </div>
+  </div>
+
+<footer class="py-2 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+  </div>
+
+</footer>
 
 
 <% include ../partials/footer.ejs %>

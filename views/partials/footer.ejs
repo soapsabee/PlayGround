@@ -27,6 +27,26 @@
  text-overflow: ellipsis; 
 }
 
+
+
+li { display: inline-block; }
+
+.item { display: inline-block; }
+
+.btn-load-more {
+  font-size: 14px;
+  color: #fff;
+  background-color: #00712c;
+  border: 0;
+  outline: 0;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.btn-load-more:hover { background-color: #00481c; }
+
+
     
   </style>
 
@@ -76,10 +96,34 @@
           window.location.href = `/api/find_AppByPrice/${from}/${to}`;
           });
 
-         $("#btnbusiness").click(function () {
+         $("#btn-business").click(function () {
         window.location.href = `/show_apps/Business`;
          });
+
+            $("#btn-entertain").click(function () {
+        window.location.href = `/show_apps/ENTERTAINMENT`;
+      });
+
+      $("#btn-photo").click(function () {
+        window.location.href = `/show_apps/PHOTOGRAPHY`;
+      });
+
+      $("#btn-social").click(function () {
+        window.location.href = `/show_apps/SOCIAL`;
+      });
+
+      $("#btn-life").click(function () {
+        window.location.href = `/show_apps/LIFESTYLE`;
+      });
          
+      $("#btn-edu").click(function () {
+        window.location.href = `/show_apps/EDUCATION`;
+      });
+      
+      $("#btn-more").click(function () {
+       $('#myModal').modal('show'); 
+      });
+     
          $(".btn-blue").mouseover(function () {
         $(this).css("background-color", "#7CEDE7");
       }).mouseout(function () {
